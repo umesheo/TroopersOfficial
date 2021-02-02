@@ -620,6 +620,14 @@ html {
 #portada{
   background: url('../img/magazine.png');
 }
+#FistPgeMag{
+  background: url('../img/magazine1.png');
+  background-size: cover;
+  background-position: center;
+
+
+
+  }
 #portada-back{
   background: url('../img/banner.jpg');
 }
