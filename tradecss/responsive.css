@@ -89,6 +89,7 @@
     .cart-content-right {
         padding-bottom: 5px;
     }
+
     .megamenu>.row [class*="col-"] {
         padding: 0px;
     }
@@ -308,7 +309,8 @@ padding: 126px 40px;
     left: -234px;
 width: 55%;
 }
-    .img-box {display: none;}
+   
+   
 
 .choose_text { font-size: 37px;}
 .bt_main { width: 25%;}
