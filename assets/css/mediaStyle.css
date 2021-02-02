@@ -401,7 +401,8 @@ header {
     margin: 20px auto;
      }
 
-  @media only screen and (max-width:479px) {
+
+    @media only screen and (max-width:479px) {
     .video-player .play-list{
        max-width:300px !important;
     }
@@ -454,6 +455,7 @@ header {
     padding-right: 0 !important;
     margin-left: 0 !important;
     margin-right: 0 !important; } }
+
 .vr-gallery h3 {
   font-size: 18px;
   color: #333333;
@@ -934,6 +936,8 @@ footer h2.logo:hover{
     color: #03133a;
     font-family: "Montserrat-Bold"; }
 
+
+
 @media (max-width: 767px) {
   .mt-md-4 {
     margin-top: 50px; } }
@@ -964,6 +968,12 @@ footer h2.logo:hover{
 @media screen and (max-width:900px) {
 .media-title {color:black !important; margin-top:50px;}
 }
+
+@media screen and (max-width:988px) {
+.media-title {color:black !important; margin-top:280px;}
+}
+
+
 
 @media screen and (max-width:900px) {
 .ser-team-row {padding-right:20px;}

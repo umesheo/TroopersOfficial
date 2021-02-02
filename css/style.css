@@ -538,6 +538,9 @@ html {
   background: white;
   perspective-origin: left;
 }
+
+
+
 .animate{
   position: relative;
   font-size: 5vw;
@@ -2322,6 +2325,8 @@ body {
   margin: 15px auto;
   background-color: #fff;
 }
+
+
 
 @media (max-width: 991px) {
   .el-wrapper {
