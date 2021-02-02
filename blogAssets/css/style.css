@@ -1181,8 +1181,13 @@ blockquote {
 
 .main-blog-image{
     width:100%; 
+<<<<<<< HEAD
     height:500px;
     background-size: cover;
+=======
+    height: 500px;
+    background-size: contain;
+>>>>>>> a854e2b3d1e44e4f637c0fca596a1ee427e06d89
 }
 
 
