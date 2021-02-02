@@ -627,12 +627,38 @@ html {
   background: url('../img/magazine1.png');
   background-size: cover;
   background-position: center;
+}
 
+#SecondPgeMag{
+  background: url('../img/magazine2.png');
+  background-size: cover;
+  background-position: center;
+}
 
+#ThirdPgeMag{
+  background: url('../img/magazine3.png');
+  background-size: cover;
+  background-position: center;
+}
 
-  }
+#FourthPgeMag{
+  background: url('../img/magazine4.png');
+  background-size: cover;
+  background-position: center;
+}
+#FifthPgeMag{
+  background: url('../img/magazine5.png');
+  background-size: cover;
+  background-position: center;
+}
+#SixthPgeMag{
+  background: url('../img/magazine6.png');
+  background-size: cover;
+  background-position: center;
+}
+
 #portada-back{
-  background: url('../img/banner.jpg');
+  background: url('../img/magazineBack.png');
 }
 #portada, #portada-back{
   background-size: 100% 100%;
