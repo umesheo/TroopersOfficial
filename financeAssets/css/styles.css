@@ -2666,6 +2666,7 @@ line-height: 30px;
 }
 
 .Address a{
+  font-weight: 700; 
   color:#fff !important;
 
 }

@@ -158,7 +158,7 @@ p:last-child { margin-bottom: 0; }
 
 @media(max-width: 540px){
   .tm-container-outer{
-    padding-bottom:110px;
+    padding-bottom:30px;
   }
 }
 
@@ -581,16 +581,29 @@ label { font-weight: 700; }
 footer {
     background: black;
     padding-top: 40px;
-    padding-bottom: 40px;
+    padding-bottom: 10px;
     text-align: center;    
     font-size: 0.8rem;
 }
 
-footer a { color: #fff; }
+footer a { color: #fff;}
 
 footer a:hover { color: #900; }
 
 footer p { color: white; }
+
+
+
+.footer-a{
+    font-weight: 700;
+}
+
+.footer-a:hover{
+    transition-duration: 0.5s;
+    color:red !important;
+    text-decoration: none;
+
+}
 
 .contact-map {
     position: relative;

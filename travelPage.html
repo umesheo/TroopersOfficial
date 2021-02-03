@@ -8,10 +8,17 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Troopers Group</title>
-<!-- 
-Journey Template 
-http://www.templatemo.com/tm-511-journey
--->
+
+      <!-- default favicon -->
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+    <!-- wideley used favicon -->
+    <link rel="icon" href="img/logo.png" sizes="32x32" type="image/png">
+    <!-- for apple mobile devices -->
+    <link rel="apple-touch-icon-precomposed" href="img/logo.png" type="image/png" sizes="152x152">
+    <link rel="apple-touch-icon-precomposed" href="img/logo.png" type="image/png" sizes="120x120">
+    <!-- google tv favicon -->
+    <link rel="icon" href="img/logo.png" sizes="96x96" type="image/png">
+
     <!-- load stylesheets -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">  <!-- Google web font "Open Sans" -->
     <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">                <!-- Font Awesome -->
@@ -172,7 +179,7 @@ http://www.templatemo.com/tm-511-journey
                           <div class="form-group">
                             <label for="date">Destination</label>
                             <div class="form-field">
-                              <input type="text" id="location" type="text" name="Destination " class="form-control" placeholder="Destination">
+                              <input type="text" id="location" type="text" name="Destination " class="form-control" placeholder="Destination" required>
                             </div>
                           </div>
                          </div>
@@ -180,7 +187,7 @@ http://www.templatemo.com/tm-511-journey
                           <div class="form-group">
                             <label for="guests">People</label>
                             <div class="form-field">
-                              <input type="text" id="location" type="text" name="Number of People " class="form-control" placeholder="No. People">
+                              <input type="text" id="location" type="text" name="Number of People " class="form-control" placeholder="No. People" required>
                             </div>
                           </div>
                         </div>
@@ -188,7 +195,7 @@ http://www.templatemo.com/tm-511-journey
                           <div class="form-group">
                             <label for="date">Dates:</label>
                             <div class="form-field">
-                              <input type="month" id="dates" type="date" name="Dates " class="form-control" placeholder="Check-in date">
+                              <input type="month" id="dates" type="date" name="Dates " class="form-control" placeholder="Check-in date" required>
                             </div>
                           </div>
                         </div>
@@ -196,7 +203,7 @@ http://www.templatemo.com/tm-511-journey
                           <div class="form-group">
                             <label for="date">Cost</label>
                             <div class="form-field">
-                              <input type="text" id="cost" type="Cost" name="Cost " class="form-control" placeholder="Cost">
+                              <input type="text" id="cost" type="Cost" name="Cost " class="form-control" placeholder="Cost" required>
                             </div>
                           </div>
                          </div>
@@ -236,6 +243,7 @@ http://www.templatemo.com/tm-511-journey
                               <!--Header text-->
                              
             <div class="site-section bg-light" id="popular-destinations">
+              <div class="site-section-container">
            <div class="container">
         <div class="row justify-content-center" >
           <div class="col-lg-7 text-center mb-5">
@@ -246,7 +254,7 @@ http://www.templatemo.com/tm-511-journey
           </div>
         </div>
         <div class="row">
-         <div class="property-card">
+         <div class="property-card card_one">
     <a href="pokharaPackage.html">
       <div class="property-image">
         <div class="property-image-title">
@@ -354,8 +362,9 @@ http://www.templatemo.com/tm-511-journey
         </div>
         <div class="row">
              <div class="container page-wrapper">
-  <div class="page-inner">
-    <div class="row">
+  <div class="row col-md-12">
+  <div class="page-inner col-md-4">
+    <div class="row ">
       <div class="el-wrapper">
         <div class="box-up">
           <img class="img" src="img/poonhill.png" alt="">
@@ -384,7 +393,7 @@ http://www.templatemo.com/tm-511-journey
     </div>
 
   </div>
-   <div class="page-inner">
+   <div class="page-inner col-md-4">
     <div class="row">
       <div class="el-wrapper">
         <div class="box-up">
@@ -414,7 +423,7 @@ http://www.templatemo.com/tm-511-journey
     </div>
 
   </div>
-   <div class="page-inner">
+   <div class="page-inner col-md-4">
     <div class="row">
       <div class="el-wrapper">
         <div class="box-up">
@@ -444,9 +453,10 @@ http://www.templatemo.com/tm-511-journey
     </div>
 
   </div>
-  <div class="row">
+</div>
+  <div class="row col-md-12">
       <div class="container page-wrapper">
-  <div class="page-inner">
+  <div class="page-inner col-md-4">
     <div class="row">
       <div class="el-wrapper">
         <div class="box-up">
@@ -476,7 +486,7 @@ http://www.templatemo.com/tm-511-journey
     </div>
 
   </div>
-   <div class="page-inner">
+   <div class="page-inner col-md-4">
     <div class="row">
       <div class="el-wrapper">
         <div class="box-up">
@@ -518,9 +528,10 @@ http://www.templatemo.com/tm-511-journey
 
 
     </div> 
-        
+       </div> 
 </div> <!-- .main-content -->
            <div class="site-section bg-light" id="popular-destinations">
+            <div class="site-section-container">
            <div class="container">
         <div class="row justify-content-center" >
           <div class="col-lg-7 text-center mb-5">
@@ -531,7 +542,7 @@ http://www.templatemo.com/tm-511-journey
           </div>
         </div>
         <div class="row">
-         <div class="property-card">
+         <div class="property-card card_one">
     <a href="pokharaPackage.html">
       
         <div class="property-imageE">
@@ -581,13 +592,14 @@ http://www.templatemo.com/tm-511-journey
 
 
     </div>
+  </div>
 <!--Our services-->
   <div class="service py-5">
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-10 col-11 mx-auto">
             <div class="mt-2 mb-5 text-center">
-              <h1 class="service_heading">OUR SERVICES</h1>
+              <h1 class="service_heading service-header">OUR SERVICES</h1>
             </div>
             <div class="row">
               <!-- left side data -->
@@ -711,25 +723,24 @@ http://www.templatemo.com/tm-511-journey
     </div>
   </div>
   <!--Our Services End-->
-      <div class="site-section bg-light">
+      <div class="book-section bg-light">
           <h3 style="text-align: center;">Book an Appointment</h3>
           <p style="text-align: center;"> For your travel package</p>
             <form action="mailto:Subhaschettri0772@gmail.com" method="post" enctype="text/plain" id="contact-form" >
                 <a name="contact"></a>
 
                 <label>Name</label>
-                <input class="input-field" type="text" name="name">
+                <input class="input-field" type="text" name="name" required>
 
                 <label>Subject</label>
-                <input class="input-field" type="text" name="subject">
+                <input class="input-field" type="text" name="subject" required>
 
                 <label>Email</label>
-                <input class="input-field" type="Email" name="mail">
+                <input class="input-field" type="Email" name="mail" required>
 
                 <label>Message</label>
-                <textarea class="input-field" name="message"></textarea>
-
-                 <input id="submit-btn" type="submit" value="Send">
+                <textarea class="input-field" name="message" required></textarea>
+                <input id="submit-btn" type="submit" value="Send" style="outline:none" >
             </form>
         </div>
       </div>
@@ -740,7 +751,7 @@ http://www.templatemo.com/tm-511-journey
                     
                 </a></p>
                 <br><br>
-                 <div class="address_2">
+                 <div class="address_2" style="margin-bottom:20px">
                   <div class="row">
                      <div class="col-sm-12 col-md-12 col-lg-4">
                        <div class="site_info">
@@ -759,7 +770,8 @@ http://www.templatemo.com/tm-511-journey
                      </div>
                      </div> 
                   </div>
-               </div>
+               <p class="text-center text-white">&copy; 2020 Troopers. All Rights Reserved. Designed and developed
+                by <a href="It.html" target="_blank" class="text-white footer-a">Troopers IT Team</a></p>
             </footer>      
     <!-- jQuery -->
   <script src="js/jquery.min.js"></script>

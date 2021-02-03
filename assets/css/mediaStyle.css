@@ -689,7 +689,8 @@ footer h2.logo:hover{
 
 .footer-a{
   transition:0.5s !important;
-  
+  font-weight: 700;
+  text-decoration:none !important;
 }
 
 .footer-a:hover{

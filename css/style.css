@@ -1113,11 +1113,42 @@ body{
   padding: 2.5em 0;
 padding-top: 50px;
    }
+
+  .site-section.site-section-sm {
+    padding: 4em 0; }
   @media (min-width: 768px) {
     .site-section {
       padding: 5em 0; } }
   .site-section.site-section-sm {
     padding: 4em 0; }
+
+  @media (max-width: 480px) {
+  /*Aligning the popular trek desination title and card to center*/
+  .site-section-container {
+    margin-left:45px;
+  }
+  /*Margin from popular trek and tour destination title and card*/
+  .site-section .card_one {
+      margin-top:120px;
+    }
+
+  }
+
+   @media (max-width: 480px) {
+  /*Margin from our services heading and card*/
+  .service .service_heading {
+    margin-top:100px;
+    }
+  }
+
+  @media (max-width: 480px) {
+  /*Aligning the submit button to center*/
+  .book-section #submit-btn{
+    margin-left:80px !important;
+    }
+  }
+
+
 
 .site-footer {
   padding: 4em 0;
@@ -2333,17 +2364,12 @@ body {
 }
 
 .page-wrapper {
- 
   position: initial;
-  height: 100%;
-  display: table-row-group;
+  height: 100%; 
 }
 
-.page-wrapper .page-inner {
-    padding-right: 40px;
-    display: table-cell;
-  vertical-align: baseline;
-}
+
+
 
 .el-wrapper {
   width: 360px;
@@ -2351,7 +2377,6 @@ body {
   margin: 15px auto;
   background-color: #fff;
 }
-
 
 
 @media (max-width: 991px) {
