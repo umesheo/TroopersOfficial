@@ -984,6 +984,14 @@ footer h2.logo:hover{
 .stylish-image{height:500px !important;}
 }
 
+@media screen and (max-width:480px) {
+.ser-team-row {margin-left:-20px;}
+}
+
+@media screen and (max-width:580px) {
+.ser-team-row {margin-left:-40px;}
+}
+
 
 
 
