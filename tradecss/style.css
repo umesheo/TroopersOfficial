@@ -136,6 +136,11 @@ a {
      text-decoration: none;
      outline: none !important;
 }
+@media(max-width: 480px){
+  .image{
+    width: 10px;
+  }
+}
 
 .layout_padding {
    padding: 90px 0;
