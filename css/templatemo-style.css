@@ -284,6 +284,12 @@ p:last-child { margin-bottom: 0; }
     position: relative;
     background-size: contain;
 }
+.tm-banner-bgC {
+    background: url(../img/chiwanpackage.JPG) center top no-repeat;    
+    min-height: 720px;
+    position: relative;
+    background-size: contain;
+}
 .tm-banner-row { 
     position: relative;
     z-index: 100;
