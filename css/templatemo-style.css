@@ -284,6 +284,35 @@ p:last-child { margin-bottom: 0; }
     position: relative;
     background-size: contain;
 }
+
+.tm-banner-bgL {
+    background: url(../img/langtangRegionCover.jpg) center top no-repeat;    
+    min-height: 720px;
+    position: relative;
+    background-size: cover;
+}
+
+.tm-banner-bgE {
+    background: url(../img/everestBaseCampSlide2.jpg) center top no-repeat;    
+    min-height: 720px;
+    position: relative;
+    background-size: cover;
+}
+
+.tm-banner-bgM {
+    background: url(../img/mansaluRegionCover.jpg) center top no-repeat;    
+    min-height: 720px;
+    position: relative;
+    background-size: cover;
+}
+
+.tm-banner-bgA {
+    background: url(../img/annapurnaRegionCover.jpg) center top no-repeat;    
+    min-height: 720px;
+    position: relative;
+    background-size: cover;
+}
+
 .tm-banner-row { 
     position: relative;
     z-index: 100;
