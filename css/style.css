@@ -287,7 +287,7 @@ html {
   -webkit-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
   -o-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
   transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
-  background-image:url("../img/annapurnaTrek.jpg");
+  background-image:url("../img/annapurnaBaseCampCover.jpg");
   background-size:cover;
   background-repeat:no-repeat;
 }
@@ -301,10 +301,26 @@ html {
   -webkit-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
   -o-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
   transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
-  background-image:url("../img/langtangTrek.jpg");
+  background-image:url("../img/langtangRegionCover.jpg");
   background-size:cover;
   background-repeat:no-repeat;
 }
+
+.property-imageM
+{
+  height:6em;
+  width:14em;
+  padding:1em 2em;
+  position:Absolute;
+  top:0px;
+  -webkit-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -o-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  background-image:url("../img/mansaluRegionCover.jpg");
+  background-size:cover;
+  background-repeat:no-repeat;
+}
+
 .property-image2
 {
   height:6em;
@@ -463,6 +479,12 @@ html {
 {
   height:18em;
 }
+
+.property-card:hover .property-imageM
+{
+  height:18em;
+}
+
 #contact-form{
   display: block;
   max-width: 600px;
@@ -490,10 +512,12 @@ html {
   width: 100%;
   padding-top: 10px;
   padding-bottom:10px; 
+  padding-left:6px;
   background-color: white;
   border-radius: 5px;
   border:1px red;
   font-size: 14px;
+  outline:none;
 }
 
 
@@ -2679,10 +2703,9 @@ input[type="text"]{
 
 .input-field:focus, textarea:focus {
    box-shadow: 0 0 5px rgba(81, 203, 238, 1);
-  padding: 1px 0px 1px 6px;
-  margin: 1px 2px 0px 2px;
-  border: 1.5px solid rgba(81, 203, 238, 1) !important;
+  border: 2px solid rgba(81, 203, 238, 1) !important;
   background-color: white !important;
+  transition-duration: 0.2s;
 }
 
 
