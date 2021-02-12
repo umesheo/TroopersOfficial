@@ -278,6 +278,11 @@ p:last-child { margin-bottom: 0; }
     min-height: 720px;
     position: relative;
 }
+.tm-banner-bgL {
+    background: url(../img/Lumbini.jpg) center top no-repeat;    
+    min-height: 720px;
+    position: relative;
+}
 .tm-banner-bgK {
     background: url(../img/KathmanduPackage.png) center top no-repeat;    
     min-height: 720px;
