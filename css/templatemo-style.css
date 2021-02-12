@@ -278,7 +278,7 @@ p:last-child { margin-bottom: 0; }
     min-height: 720px;
     position: relative;
 }
-.tm-banner-bgL {
+.tm-banner-bgLU {
     background: url(../img/Lumbini.jpg) center top no-repeat;    
     min-height: 720px;
     position: relative;
@@ -289,7 +289,7 @@ p:last-child { margin-bottom: 0; }
     position: relative;
     background-size: contain;
 }
-<<<<<<< HEAD
+
 
 .tm-banner-bgL {
     background: url(../img/langtangRegionCover.jpg) center top no-repeat;    
@@ -319,14 +319,14 @@ p:last-child { margin-bottom: 0; }
     background-size: cover;
 }
 
-=======
+
 .tm-banner-bgC {
     background: url(../img/chiwanpackage.JPG) center top no-repeat;    
     min-height: 720px;
     position: relative;
     background-size: contain;
 }
->>>>>>> 93463e2e9cc8f9af1f65d8323472ba9247391c87
+
 .tm-banner-row { 
     position: relative;
     z-index: 100;
