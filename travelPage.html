@@ -172,14 +172,16 @@
             </div>
             <div class="tab-content">
               <div id="flight" class="tab-pane fade in active">
-               
+               <!--
                 <form action="mailto:Subhaschettri0772@gmail.com" method="post" class="colorlib-form" enctype="text/plain">
+                -->
+                <form action="Pagination1.html" class="colorlib-form">
                         <div class="row">
                          <div class="col-md-3">
                           <div class="form-group">
                             <label for="date">Destination</label>
                             <div class="form-field">
-                              <input type="text" id="location" type="text" name="Destination " class="form-control" placeholder="Destination" required>
+                              <input type="text" id="destination" type="text" name="Destination " class="form-control" placeholder="Destination" required>
                             </div>
                           </div>
                          </div>
@@ -187,7 +189,7 @@
                           <div class="form-group">
                             <label for="guests">People</label>
                             <div class="form-field">
-                              <input type="text" id="location" type="text" name="Number of People " class="form-control" placeholder="No. People" required>
+                              <input type="text" id="people" type="text" name="Number of People " class="form-control" placeholder="No. People" required>
                             </div>
                           </div>
                         </div>
@@ -219,10 +221,11 @@
                         </div>
                       -->
                         <div class="col-md-2">
-                         <input type="submit" id="submit" value="Send" class="btn btn-primary btn-block">
+                         <input type="submit" id="next_one" value="Next" class="btn btn-primary btn-block"  onClick="passValue();">
                         </div>
                       </div>
-                    </form>
+                      
+                    </form> 
                     
                  </div>
                  
@@ -927,8 +930,32 @@ $(document).ready(function(){
             loadGoogleMap();                                       // Google Map                
             $('.tm-current-year').text(new Date().getFullYear());  // Update year in copyright           
         });
+
+        function passValue(){
+        /*Getting the value from textfield and setting to destination variable */
+        var destination=document.getElementById("destination").value;
+        /*Setting the value to local storage, can be accessed by destinationValue*/
+        localStorage.setItem("destinationValue",destination);
+
+        /*Getting the value from textfield and setting to people variable */
+        var people=document.getElementById("people").value;
+        /*Setting the value to local storage, can be accessed by peopleValue*/
+        localStorage.setItem("peopleValue",people);
+
+        /*Getting the value from textfield and setting to dates variable */
+        var dates=document.getElementById("dates").value;
+        /*Setting the value to local storage, can be accessed by datesValue*/
+        localStorage.setItem("datesValue",dates);
+
+         /*Getting the value from textfield and setting to cost variable */
+        var cost=document.getElementById("cost").value;
+        /*Setting the value to local storage, can be accessed by datesValue*/
+        localStorage.setItem("costValue",cost);
+
+        return false;
+      }
        
-    </script>             
+    </script>           
 
 </body>
 </html>

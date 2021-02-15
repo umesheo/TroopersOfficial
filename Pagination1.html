@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Page Pagination</title>
+<link rel="stylesheet" type="text/css" href="css/paginationStyle.css">
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+<script>
+  /*document.getElementById("result").innerHTML=localStorage.getItem("destinationValue");
+  */
+  function passValue(){
+    /*Getting the value from travelPage destination text field and setting the value to destination variable */
+  var destination=localStorage.getItem("destinationValue");
+  /*Setting the destination variable value to localstorage*/
+  localStorage.setItem("destinationValueOne",destination);
+
+  /*Getting the value from travelPage people text field and setting the value to people variable */
+  var people=localStorage.getItem("peopleValue");
+  /*Setting the people variable value to localstorage*/
+  localStorage.setItem("peopleValueOne",people);
+
+   /*Getting the value from travelPage dates text field and setting the value to dates variable */
+  var dates=localStorage.getItem("datesValue");
+  /*Setting the people variable value to localstorage*/
+  localStorage.setItem("datesValueOne",dates);
+
+  /*Getting the value from travelPage cost text field and setting the value to cost variable */
+  var cost=localStorage.getItem("costValue");
+  /*Setting the people variable value to localstorage*/
+  localStorage.setItem("costValueOne",cost);
+
+  /*Getting the value from current page combo box and setting to peoples variable */
+  var peoples=document.getElementById("peoples").value;
+  /*Setting the value to local storage, can be accessed by peoplesValue*/
+  localStorage.setItem("peoplesValue",peoples);
+
+  /*Navigating to pagination2.html*/
+/*
+  location.href = 'Pagination2.html';
+
+  location.href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=target@email.com";
+*/
+/*
+    window.location.href = "mailto:mail@example.org?subject=Appoinment for financial consultation&body=Destination:"+destination+", People:"+people+", Date:"+dates+",Cost: "+cost+", Peoples:"+peoples+"";
+*/
+  }
+
+</script>
+</head>
+<body>
+<div class="container-fluid">
+  <!--Page Navigation Start-->
+  <nav>
+    <ul class="pagination justify-content-center pt-5">
+      <li class="page-item disabled" title="Previous">
+        <a class="page-link rounded-circle m-1" href="">
+          <i class="fas fa-chevron-left text-primary"></i></a></li>
+
+      <li class="page-item active"><a class="page-link rounded-circle m-1" href="Pagination2.html">1</a></li>
+      <li class="page-item"><a class="page-link rounded-circle m-1">2</a></li>
+      <li class="page-item"><a class="page-link rounded-circle m-1">3</a></li>
+      <li class="page-item"><a class="page-link rounded-circle m-1">4</a></li>
+      <li class="page-item"><a class="page-link rounded-circle m-1">5</a></li>
+      <li class="page-item fixed-bottom pb-5 text-center" title="Next"> 
+      </li>
+    </ul>
+  </nav>
+  <!--Page Navigation End-->
+  <!--Content Start-->
+  <div class="card-container">
+    <div class="card text-center justify-content-center">
+      <img src="img/logo.png" alt="Avatar" class="card-image">
+      <div class="container">
+        <h4><b>No. of People Travelling</b></h4> 
+        <p>Architect & Engineer</p> 
+        <form action="Pagination2.html">
+          <div class="select" style="margin-bottom:10px;">
+           <select name="format" id="peoples" required>
+              <option selected disabled value="">Select Number of People</option>
+              <option value="Single">Single</option>
+              <option value="Couple">Couple</option>
+              <option value="Family">Family</option>
+              <option value="Group">Group</option>
+              <option value="mobi" disabled></option>
+           </select>
+          </div>
+          <!--Next Button Start-->
+          <div class="text-center next-button">
+            <input type="submit" onClick="passValue();" class="next" value="Next &raquo;" style="border:none"/>
+          </div>
+          <!--Next Button End-->
+      </form>
+      </div>
+    </div>
+  </div>
+  <!--Content End-->
+  </div>
+  <!--Displaying Selected Values Start-->
+   <div style="position: fixed;" class="selectedValuesCard">
+    <img src="img/everestTrek.jpg" alt="Avatar" class="selectedValuesCard-image">
+    <div class="selectedValuesCard-content">
+      Destination: <span id="destinationText"></span>
+      <script>
+        document.getElementById("destinationText").innerHTML=localStorage.getItem("destinationValue");
+      </script>
+      <br>
+       People: <span id="peopleText"></span>
+      <script>
+        document.getElementById("peopleText").innerHTML=localStorage.getItem("peopleValue");
+      </script>
+      <br>
+       Date: <span id="dateText"></span>
+      <script>
+        document.getElementById("dateText").innerHTML=localStorage.getItem("datesValue");
+      </script>
+      <br>
+       Cost: <span id="costText"></span>
+      <script>
+        document.getElementById("costText").innerHTML=localStorage.getItem("costValue");
+      </script>
+    </div>
+  </div>
+  <!--Displaying Selected Values End-->
+</body>
+</html>

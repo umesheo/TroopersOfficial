@@ -1,0 +1,175 @@
+ body{
+    /*background: url(1.jpg) no-repeat center;*/
+    /*background-size: cover;*/
+    height: 100vh;
+
+  }
+
+.container-fluid{
+  /*background-color: #000;*/
+  height: 100vh;
+  /*opacity: .8;*/
+  position:absolute;
+  padding-top:10px;
+}
+
+
+/*********************************
+**********************************
+***********Next Burron************
+**********************************
+**********************************/
+.next-button .next {
+  text-decoration: none !important;
+  display: inline-block;
+  padding: 8px 16px;
+  outline: none;
+}
+
+.next-button .next:hover {
+  background-color: #ddd !important !important;
+  color: white !important !important;
+}
+
+.previous {
+  background-color: #f1f1f1;
+  color: black;
+}
+
+.next {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.round {
+  border-radius: 50%;
+}
+
+
+/*********************************
+**********************************
+***********Card Start*************
+**********************************
+**********************************/
+.card{
+  box-shadow: 0 4px 40px 0 rgba(0,0,0,0.2);
+  transition: 0.8s;
+  width: 350px;
+  margin-bottom:50px;
+  padding-bottom:20px;
+  margin-top:20px;
+
+}
+
+.card-image{
+  width:80%;
+  height:300px;
+  margin-left:40px;
+  margin-top:20px;
+}
+
+.card:hover {
+  box-shadow: 0 8px 80px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+  padding: 2px 16px;
+ 
+}
+
+/*Aligning the card to center*/
+.card-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*********************************
+**********************************
+***********Combo Box*************
+**********************************
+**********************************/
+select {
+   -webkit-appearance:none;
+   -moz-appearance:none;
+   -ms-appearance:none;
+   appearance:none;
+   outline:0;
+   box-shadow:none;
+   border:0!important;
+   /*background: #4B81E8;*/
+   background: #5c6664;
+   background-image: none;
+   flex: 1;
+   padding: 0 .5em;
+   color:#fff;
+   cursor:pointer;
+   font-size: 1em;
+   font-family: 'Open Sans', sans-serif;
+}
+select::-ms-expand {
+   display: none;
+}
+.select {
+   position: relative;
+   display: flex;
+   width: 20em;
+   height: 3em;
+   line-height: 3;
+   background: #5c6664;
+   overflow: hidden;
+   border-radius: .25em;
+}
+.select::after {
+   content: '\25BC';
+   position: absolute;
+   top: 0;
+   right: 0;
+   padding: 0 1em;
+   background: #2b2e2e;
+   cursor:pointer;
+   pointer-events:none;
+   transition:.25s all ease;
+}
+.select:hover::after {
+   color: #23b499;
+}
+
+.exactDateBox{
+  display:none;
+}
+
+.approxDateBox{
+  display:none;
+}
+
+
+/*********************************
+**********************************
+***********Card Start*************
+**********************************
+**********************************/
+.selectedValuesCard{
+  box-shadow: 0 4px 40px 0 rgba(0,0,0,0.2);
+  transition: 0.8s;
+  width: 230px;
+  border-radius: 10px;
+}
+
+.selectedValuesCard-image {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  display:contain;
+  width:100%;
+  height:200px
+}
+
+.selectedValuesCard-content {
+  padding:20px;
+}
+
+/* On mouse-over, add a deeper shadow */
+.selectedValuesCard-image:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
