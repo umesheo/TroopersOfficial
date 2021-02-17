@@ -15,37 +15,53 @@
   var destination=localStorage.getItem("destinationValue");
   /*Setting the destination variable value to localstorage*/
   localStorage.setItem("destinationValueOne",destination);
-
-  /*Getting the value from travelPage people text field and setting the value to people variable */
+  /*
+  //Getting the value from travelPage people text field and setting the value to people variable
   var people=localStorage.getItem("peopleValue");
-  /*Setting the people variable value to localstorage*/
+  //Setting the people variable value to localstorage
   localStorage.setItem("peopleValueOne",people);
 
-   /*Getting the value from travelPage dates text field and setting the value to dates variable */
+  //Getting the value from travelPage dates text field and setting the value to dates variable
   var dates=localStorage.getItem("datesValue");
-  /*Setting the people variable value to localstorage*/
+  //Setting the people variable value to localstorage
   localStorage.setItem("datesValueOne",dates);
 
-  /*Getting the value from travelPage cost text field and setting the value to cost variable */
+  //Getting the value from travelPage cost text field and setting the value to cost variable
   var cost=localStorage.getItem("costValue");
-  /*Setting the people variable value to localstorage*/
+  //Setting the people variable value to localstorage
   localStorage.setItem("costValueOne",cost);
 
-  /*Getting the value from pagination one peoples and setting to peoples variable */
+  */
+
+  //Getting the value from pagination one peoples and setting to peoples variable
   var peoples=localStorage.getItem("peoplesValue");
-  /*Setting the value to local storage, can be accessed by destinationValue*/
+  //Setting the value to local storage, can be accessed by destinationValue
   localStorage.setItem("peoplesValueOne",peoples);
 
-  /*Getting the value from current page exact start date picker and setting to dates variable */
-  var startDate=document.getElementById("startDate").value;
-  /*Setting the value to local storage, can be accessed by datesValue*/
-  localStorage.setItem("startDateValue",startDate);
+  //Getting the value from current page exact start date picker and setting to dates variable
+  var exactStartDate=document.getElementById("exactStartDate").value;
+  //Setting the value to local storage, can be accessed by datesValue
+  localStorage.setItem("exactStartDateValue",exactStartDate);
 
-   /*Getting the value from current page exact end date picker and setting to dates variable */
-  var endDate=document.getElementById("endDate").value;
-  /*Setting the value to local storage, can be accessed by datesValue*/
-  localStorage.setItem("endDateValue",endDate);
+  //Getting the value from current page exact end date picker and setting to dates variable
+  var exactEndDate=document.getElementById("exactEndDate").value;
+  //Setting the value to local storage, can be accessed by datesValue
+  localStorage.setItem("exactEndDateValue",exactEndDate);
 
+  //Getting the value from current page approx start date picker and setting to dates variable
+  var approxStartDate=document.getElementById("approxStartDate").value;
+  //Setting the value to local storage, can be accessed by datesValue
+  localStorage.setItem("approxStartDateValue",approxStartDate);
+
+  //Getting the value from current page approx end date picker and setting to dates variable
+  var approxEndDate=document.getElementById("approxEndDate").value;
+  //Setting the value to local storage, can be accessed by datesValue
+  localStorage.setItem("approxEndDateValue",approxEndDate);
+
+  //Getting the value from overall date selector drop down menu
+  var selectedDateCategoryIndex=document.getElementById("selectedDateCategory").selectedIndex;
+  //Setting the value to local storage, can be accessed by datesValue
+  localStorage.setItem("selectedDateCategoryValue",selectedDateCategoryIndex);
 
 
   /*Navigating to pagination2.html*/
@@ -64,29 +80,51 @@
 
 
 </script>
-<!--Javascript for show hide date box-->
+<!--Javascript for show hide exact date box-->
 <script>
 $(document).ready(function(){
     $('#selectedDateCategory').on('change', function() {
+      //if the user selects Exact Date drop down category
       if ( this.value == 'ExactDate')
       //.....................^.......
       {
+        //display the exact date drop down
         $(".exactDateBox").show();
+        //hide the approx date drop down
         $(".approxDateBox").hide();
+        //require exact start date and exact end date
+        document.getElementById("exactStartDate").required = true;
+        document.getElementById("exactEndDate").required = true;
+        //call the function of page 3 and pass a value and if that value is true then dispaly the container
       }
-      /*
+      //else if the user selects the Approx Date drop down category
       else if ( this.value == 'ApproxDate')
       {
+        //hide the exact date drop down
         $(".exactDateBox").hide();
+        //display the approx date drop down
         $(".approxDateBox").show();
+        //don't require exact start date and exact end date
+        document.getElementById("exactStartDate").required = false;
+        document.getElementById("exactEndDate").required = false;
+        //require the approx start date and end date
+        document.getElementById("approxStartDate").required = true;
+        document.getElementById("approxEndDate").required = true;
       }
-      */
+      //else the user selects date not decided
       else{
+        //hide both the exact and approx start and end date drop down
         $(".exactDateBox").hide();
         $(".approxDateBox").hide();
+        //don't require both exact and approx start and end date 
+        document.getElementById("exactStartDate").required = false;
+        document.getElementById("exactEndDate").required = false;
+        document.getElementById("approxStartDate").required = false;
+        document.getElementById("approxEndDate").required = false;
       }
     });
 });
+
 </script>
 <!--Show hide date box-->
 </head>
@@ -95,8 +133,8 @@ $(document).ready(function(){
   <!--Page Navigation Start-->
   <nav>
     <ul class="pagination justify-content-center pt-5">
-      <li class="page-item disabled" title="Previous">
-        <a class="page-link rounded-circle m-1" href="">
+      <li class="page-item" title="Previous">
+        <a class="page-link rounded-circle m-1" href="pagination1.html">
           <i class="fas fa-chevron-left text-primary"></i></a></li>
 
       <li class="page-item"><a class="page-link rounded-circle m-1" href="Pagination1.html">1</a></li>
@@ -120,28 +158,27 @@ $(document).ready(function(){
            <select name="format" id="selectedDateCategory" required>
               <option selected disabled value="">Select Date of Travel</option>
               <option value="ExactDate">I have my exact dates</option>
-             <!-- <option value="ApproxDate">I have my approx dates</option>-->
+              <option value="ApproxDate">I have my approx dates</option>
               <option value="DateNotDecided">Not decided yet</option>
               <option value="mobi" disabled></option>
            </select>
           </div>
           <!--Exact Date Picker-->
           <div class="exactDateBox">
-            <label for="startdate">Exact or Approx Start Date:</label>
-            <input type="date" id="startDate" type="date" name="Dates " value="Start Date" class="form-control" placeholder="Check-in date" style="margin-bottom:10px;">
-            <label for="enddate">Exact or Approx End Date:</label>
-            <input type="date" id="endDate" type="date" name="Dates " value="End Date" class="form-control" placeholder="Check-in date" style="margin-bottom:10px;">
+            <label for="startdate">Exact Start Date:</label>
+            <input type="date" id="exactStartDate" type="date" name="Dates " value="Start Date" class="form-control" placeholder="Check-in date" style="margin-bottom:10px;">
+            <label for="enddate">Exact End Date:</label>
+            <input type="date" id="exactEndDate" type="date" name="Dates " value="End Date" class="form-control" placeholder="Check-in date" style="margin-bottom:10px;">
           </div>
           <!--Exact Date Picker-->
 
-          <!--
+          
           <div class="approxDateBox">
             <label for="startdate">Approx Start Date:</label>
             <input type="date" id="approxStartDate" type="date" name="Dates " value="Start Date" class="form-control" placeholder="Check-in date" style="margin-bottom:10px;">
             <label for="enddate">Approx End Date:</label>
             <input type="date" id="approxEndDate" type="date" name="Dates " value="End Date" class="form-control" placeholder="Check-in date" style="margin-bottom:10px;">
           </div>
-          Approx Date Picker-->
           <!--Next Button Start-->
           <div class="text-center next-button">
             <input type="submit" onClick="passValue();" class="next" value="Next &raquo;" style="border:none"/>
@@ -161,6 +198,7 @@ $(document).ready(function(){
     <script>
       document.getElementById("destinationText").innerHTML=localStorage.getItem("destinationValue");
     </script>
+    <!--
     <br>
      People: <span id="peopleText"></span>
     <script>
@@ -176,8 +214,9 @@ $(document).ready(function(){
     <script>
       document.getElementById("costText").innerHTML=localStorage.getItem("costValue");
     </script>
+  -->
     <br>
-    No of people:<span id="peoplesDisplay"></span>
+    No of people: <span id="peoplesDisplay"></span>
     <script>
       /*Getting the no of peoples value from pagination 1 and displaying in span id="result"*/
       document.getElementById("peoplesDisplay").innerHTML=localStorage.getItem("peoplesValue");

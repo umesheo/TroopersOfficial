@@ -7,7 +7,57 @@
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
 </script>
+
 <script>
+  function checkDateSelected() { 
+  //Getting the value from overall date selector drop down menu (previous page)
+  var selectedDateDropDown=localStorage.getItem("selectedDateCategoryValue");
+  //Setting the value to local storage, can be accessed by selectedDateCategoryValue
+  localStorage.setItem("selectedDateCategoryValue",selectedDateDropDown);
+
+  //getting the exactStartAndEndDate container by id
+  var selectedExactDateCategory=document.getElementById("exactStartAndEndDate");
+  localStorage.setItem("selectedExactDateCategory",selectedExactDateCategory);
+
+  //getting the approxStartAndEndDate container by id
+  var selectedApproxDateCategory=document.getElementById("approxStartAndEndDate");
+  localStorage.setItem("selectedApproxDateCategoryValue",selectedApproxDateCategory);
+
+  //getting the dateNotDecided container by id
+  var dateNotDecided=document.getElementById("dateNotDecided");
+  localStorage.setItem("dateNotDecided",dateNotDecided);
+
+  //if the user has selected exactDate drop down in previous page
+  if(selectedDateDropDown ==1) {
+       //display the exact date category container
+       selectedExactDateCategory.style.display = "block";
+       //hide the other containers: approx date and date not decided container
+       selectedApproxDateCategory.style.display = "none";
+       dateNotDecided.style.display="none";
+       
+  }
+  //else if the user has selected approxDate drop down in previous page
+  else if (selectedDateDropDown ==2){
+    //hide the exact date category container
+    selectedExactDateCategory.style.display = "none";
+    //display the approx date container
+    selectedApproxDateCategory.style.display = "block";
+    //hide the date not decided container
+    dateNotDecided.style.display="none";
+  }
+  //else if the user has selected date not decided in previous page
+  else{
+    //hide the exact and approx start and end date container
+    selectedExactDateCategory.style.display = "none";
+    selectedApproxDateCategory.style.display = "none";
+    //display the date not decided container
+    dateNotDecided.style.display="block"
+  }
+
+}
+  //calling the checkDateSelected function to load the function as soon as the webpage loads/opens
+  window.onload = checkDateSelected;
+ 
   /*document.getElementById("result").innerHTML=localStorage.getItem("destinationValue");
   */
   function passValue(){
@@ -15,37 +65,52 @@
   var destination=localStorage.getItem("destinationValue");
   /*Setting the destination variable value to localstorage*/
   localStorage.setItem("destinationValueOne",destination);
-
-  /*Getting the value from travelPage people text field and setting the value to people variable */
+  /*
+  //Getting the value from travelPage people text field and setting the value to people variable
   var people=localStorage.getItem("peopleValue");
-  /*Setting the people variable value to localstorage*/
+  //Setting the people variable value to localstorage
   localStorage.setItem("peopleValueOne",people);
 
-   /*Getting the value from travelPage dates text field and setting the value to dates variable */
+  //Getting the value from travelPage dates text field and setting the value to dates variable
   var dates=localStorage.getItem("datesValue");
-  /*Setting the people variable value to localstorage*/
+  //Setting the people variable value to localstorage
   localStorage.setItem("datesValueOne",dates);
 
-  /*Getting the value from travelPage cost text field and setting the value to cost variable */
+  //Getting the value from travelPage cost text field and setting the value to cost variable
   var cost=localStorage.getItem("costValue");
-  /*Setting the people variable value to localstorage*/
+  //Setting the people variable value to localstorage
   localStorage.setItem("costValueOne",cost);
+  */
 
-  /*Getting the value from pagination one peoples and setting to peoples variable */
+  //Getting the value from pagination one peoples and setting to peoples variable
   var peoples=localStorage.getItem("peoplesValue");
-  /*Setting the value to local storage, can be accessed by destinationValue*/
+  //Setting the value to local storage, can be accessed by destinationValue
   localStorage.setItem("peoplesValueOne",peoples);
 
-  /*Getting the value from current page exact start date picker and setting to dates variable */
-  var startDate=localStorage.getItem("startDateValue");
-  /*Setting the value to local storage, can be accessed by datesValue*/
-  localStorage.setItem("startDateValue",startDate);
+  //Getting the value from previous page exact start date picker and setting to dates variable
+  var exactStartDate=localStorage.getItem("exactStartDateValue");
+  //Setting the value to local storage, can be accessed by datesValue
+  localStorage.setItem("exactStartDateValueOne",exactStartDate);
 
-   /*Getting the value from current page exact end date picker and setting to dates variable */
-  var endDate=localStorage.getItem("startDateValue");
-  /*Setting the value to local storage, can be accessed by datesValue*/
-  localStorage.setItem("endDateValue",endDate);
+  //Getting the value from previous page exact end date picker and setting to dates variable
+  var exactEndDate=localStorage.getItem("exactEndDateValue");
+  //Setting the value to local storage, can be accessed by datesValue
+  localStorage.setItem("exactEndDateValueOne",exactEndDate);
 
+  //Getting the value from previous page approx start date picker and setting to dates variable
+  var approxStartDate=localStorage.getItem("approxStartDateValue");
+  //Setting the value to local storage, can be accessed by datesValue
+  localStorage.setItem("approxStartDateValueOne",approxStartDate);
+
+  //Getting the value from previous page exact end date picker and setting to dates variable
+  var approxEndDate=localStorage.getItem("approxEndDateValue");
+  //Setting the value to local storage, can be accessed by datesValue
+  localStorage.setItem("approxEndDateValueOne",approxEndDate);
+
+  //Getting the value from overall date selector drop down menu (previous page)
+  var selectedDateDropDown=localStorage.getItem("selectedDateCategoryValue");
+  //Setting the value to local storage, can be accessed by selectedDateCategoryValue
+  localStorage.setItem("selectedDateCategoryValue",selectedDateDropDown);
   
 
 
@@ -55,13 +120,21 @@
 
   location.href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=target@email.com";
 */
+    /*
+    window.location.href = "mailto:mail@example.org?subject=Appoinment for financial consultation&body=Destination:"+destination+", No. of People:"+peoples+", Exact Start Date: "+exactStartDate+", Exact End Date:"+exactEndDate+", Approx Start Date: "+approxStartDate+", Approx End Date:"+approxEndDate+"";
+  */
 
-    window.location.href = "mailto:mail@example.org?subject=Appoinment for financial consultation&body=Destination:"+destination+", People:"+people+", Date:"+dates+",Cost: "+cost+", No. of People:"+peoples+", Start Date: "+startDate+", End Date:"+endDate+"";
+    //'%0D%0A'= break line in order to change line
+    var ebody='Destination:'+destination+ '%0D%0A'+ 'No. of People:'+peoples+ '%0D%0A' + 'Exact Start Date:'+exactStartDate+ '%0D%0A'+ 'Exact End Date:'+exactEndDate+ '%0D%0A' + 'Approx Start Date:'+approxStartDate+ '%0D%0A' + 'Approx End Date:' +approxEndDate;
+
+    //opening the gmail app and lading the mail to and body section
+    window.location.href = "mailto:mail@example.org?subject=Appoinment for financial consultation&body=" +ebody;
   }
 
 
 
 </script>
+
 
 </head>
 <body>
@@ -69,8 +142,8 @@
   <!--Page Navigation Start-->
   <nav>
     <ul class="pagination justify-content-center pt-5">
-      <li class="page-item disabled" title="Previous">
-        <a class="page-link rounded-circle m-1" href="">
+      <li class="page-item" title="Previous">
+        <a class="page-link rounded-circle m-1" href="pagination2.html">
           <i class="fas fa-chevron-left text-primary"></i></a></li>
 
       <li class="page-item"><a class="page-link rounded-circle m-1" href="Pagination1.html">1</a></li>
@@ -96,6 +169,7 @@
           <script>
             document.getElementById("destinationText").innerHTML=localStorage.getItem("destinationValue");
           </script>
+          <!--
           <br>
            People: <span id="peopleText"></span>
           <script>
@@ -111,22 +185,44 @@
           <script>
             document.getElementById("costText").innerHTML=localStorage.getItem("costValue");
           </script>
+          -->
           <br>
           No of people:<span id="peoplesDisplay"></span>
           <script>
             /*Getting the no of peoples value from pagination 1 and displaying in span id="result"*/
             document.getElementById("peoplesDisplay").innerHTML=localStorage.getItem("peoplesValue");
           </script>
-          <br>
-           Start Date: <span id="startDateText"></span>
+          <div id="exactStartAndEndDate">
+           Exact Start Date: <span id="exactStartDateText"></span>
           <script>
-            document.getElementById("startDateText").innerHTML=localStorage.getItem("startDateValue");
+            document.getElementById("exactStartDateText").innerHTML=localStorage.getItem("exactStartDateValue");
           </script>
           <br>
-          End Date:<span id="endDateText"></span>
+          Exact End Date:<span id="exactEndDateText"></span>
           <script>
             /*Getting the no of peoples value from pagination 1 and displaying in span id="result"*/
-            document.getElementById("endDateText").innerHTML=localStorage.getItem("endDateValue");
+            document.getElementById("exactEndDateText").innerHTML=localStorage.getItem("exactEndDateValue");
+          </script>
+          </div>
+           <div id="approxStartAndEndDate">
+           Approx Start Date: <span id="approxStartDateText"></span>
+          <script>
+            document.getElementById("approxStartDateText").innerHTML=localStorage.getItem("approxStartDateValue");
+          </script>
+          <br>
+          Approx End Date:<span id="approxEndDateText"></span>
+          <script>
+            /*Getting the no of peoples value from pagination 1 and displaying in span id="result"*/
+            document.getElementById("approxEndDateText").innerHTML=localStorage.getItem("approxEndDateValue");
+          </script>
+          </div>
+          <div id="dateNotDecided">
+            <span id="dateNotDecidedText"> Date: Not Decided</span>
+          </div>
+           Selected Date:<span id="selectedDate"></span>
+          <script>
+            /*Getting the no of peoples value from pagination 1 and displaying in span id="result"*/
+            document.getElementById("selectedDate").innerHTML=localStorage.getItem("selectedDateCategoryValue");
           </script>
         </div>
   <!--Displaying Selected Values End-->

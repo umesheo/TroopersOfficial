@@ -13,21 +13,22 @@
   var destination=localStorage.getItem("destinationValue");
   /*Setting the destination variable value to localstorage*/
   localStorage.setItem("destinationValueOne",destination);
-
-  /*Getting the value from travelPage people text field and setting the value to people variable */
+  /*
+  //Getting the value from travelPage people text field and setting the value to people variable
   var people=localStorage.getItem("peopleValue");
-  /*Setting the people variable value to localstorage*/
+  //Setting the people variable value to localstorage
   localStorage.setItem("peopleValueOne",people);
 
-   /*Getting the value from travelPage dates text field and setting the value to dates variable */
+  //Getting the value from travelPage dates text field and setting the value to dates variable
   var dates=localStorage.getItem("datesValue");
-  /*Setting the people variable value to localstorage*/
+  //Setting the people variable value to localstorage
   localStorage.setItem("datesValueOne",dates);
 
-  /*Getting the value from travelPage cost text field and setting the value to cost variable */
+  //Getting the value from travelPage cost text field and setting the value to cost variable
   var cost=localStorage.getItem("costValue");
-  /*Setting the people variable value to localstorage*/
+  //Setting the people variable value to localstorage
   localStorage.setItem("costValueOne",cost);
+  */
 
   /*Getting the value from current page combo box and setting to peoples variable */
   var peoples=document.getElementById("peoples").value;
@@ -96,13 +97,14 @@
   <!--Content End-->
   </div>
   <!--Displaying Selected Values Start-->
-   <div style="position: fixed;" class="selectedValuesCard">
+   <div style="position: fixed; " class="selectedValuesCard">
     <img src="img/everestTrek.jpg" alt="Avatar" class="selectedValuesCard-image">
     <div class="selectedValuesCard-content">
       Destination: <span id="destinationText"></span>
       <script>
         document.getElementById("destinationText").innerHTML=localStorage.getItem("destinationValue");
       </script>
+      <!--
       <br>
        People: <span id="peopleText"></span>
       <script>
@@ -118,6 +120,7 @@
       <script>
         document.getElementById("costText").innerHTML=localStorage.getItem("costValue");
       </script>
+    -->
     </div>
   </div>
   <!--Displaying Selected Values End-->
