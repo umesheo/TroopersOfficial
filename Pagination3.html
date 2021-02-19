@@ -111,7 +111,9 @@
   var selectedDateDropDown=localStorage.getItem("selectedDateCategoryValue");
   //Setting the value to local storage, can be accessed by selectedDateCategoryValue
   localStorage.setItem("selectedDateCategoryValue",selectedDateDropDown);
-  
+
+  var age = document.querySelector('input[name=Age]:checked').value;
+  localStorage.setItem("Age", age);
 
 
   /*Navigating to pagination2.html*/
@@ -125,10 +127,12 @@
   */
 
     //'%0D%0A'= break line in order to change line
-    var ebody='Destination:'+destination+ '%0D%0A'+ 'No. of People:'+peoples+ '%0D%0A' + 'Exact Start Date:'+exactStartDate+ '%0D%0A'+ 'Exact End Date:'+exactEndDate+ '%0D%0A' + 'Approx Start Date:'+approxStartDate+ '%0D%0A' + 'Approx End Date:' +approxEndDate;
+    var ebody='Destination:'+destination+ '%0D%0A'+ 'No. of People:'+peoples+ '%0D%0A' + 'Exact Start Date:'+exactStartDate+ '%0D%0A'+ 'Exact End Date:'+exactEndDate+ '%0D%0A' + 'Approx Start Date:'+approxStartDate+ '%0D%0A' + 'Approx End Date:' +approxEndDate+ '%0D%0A'+'Age:'+age;
 
     //opening the gmail app and lading the mail to and body section
     window.location.href = "mailto:mail@example.org?subject=Appoinment for financial consultation&body=" +ebody;
+
+
   }
 
 
@@ -138,6 +142,9 @@
 
 </head>
 <body>
+   <h1 class="trip">Customize Your Trip</h1>
+   
+      <img src="img/customize.png" class="img">
 <div class="container-fluid">
   <!--Page Navigation Start-->
   <nav>
@@ -148,8 +155,8 @@
 
       <li class="page-item"><a class="page-link rounded-circle m-1" href="Pagination1.html">1</a></li>
       <li class="page-item"><a class="page-link rounded-circle m-1" href="Pagination2.html">2</a></li>
-      <li class="page-item active"><a class="page-link rounded-circle m-1" href="Pagination3.html">3</a></li>
-      <li class="page-item"><a class="page-link rounded-circle m-1">4</a></li>
+      <li class="page-item active"><a class="page-link rounded-circle m-1">3</a></li>
+      <li class="page-item"><a class="page-link rounded-circle m-1" href="Pagination4.html">4</a></li>
       <li class="page-item"><a class="page-link rounded-circle m-1">5</a></li>
       <li class="page-item fixed-bottom pb-5 text-center" title="Next"> 
       </li>
@@ -161,75 +168,84 @@
     <div class="card text-center justify-content-center">
       <img src="img/logo.png" alt="Avatar" class="card-image">
       <div class="container">
-        <h4 style="margin-bottom:20px"><b>Date of Travel</b></h4>  
+        <h4 style="margin-bottom:20px"><b>Trip Details</b></h4>  
         <form action="">
+          
+          <p>1. Do you know which destinations and activities, that you'd like to explore? *<p>
+          <input type="radio" id="Destinationyes" name="Destination" value="yes">
+          <label for="yes">Yes</label><br>
+          <input type="radio" id="Destinationno" name="Destination" value="no">
+          <label for="no">No</label><br>
+          
+          <p>2. Primary age group of adults?<p>
+          <input type="radio" id="Age18" name="Age" value="18-25">
+          <label for="Age">18-25 yrs</label><br>
+          <input type="radio" id="Age36" name="Age" value="36-50">
+          <label for="Age">36-50 yrs</label><br>
+          <input type="radio" id="Age51" name="Age" value="51-64">
+          <label for="Age">51-64 yrs</label><br>
+          <input type="radio" id="Age65" name="Age" value="51-64">
+          <label for="Age">65+yrs</label><br>
+
+          <p>3.What type of tour are you looking for?<p>
+          <input type="radio" id="TripCustom" name="Trip" value="custom">
+          <label for="custom">Custom-made trip with guide</label><br>
+          <input type="radio" id="Tripcustomwithoutdriver" name="Trip" value="customwithoutdriver">
+          <label for="customwithoutdriver">Custom-made trip without guide.</label><br>
+          <input type="radio" id="TripGroupTour" name="Trip" value="GroupTour">
+          <label for="GroupTour">Group Tour</label><br>
+          <input type="radio" id="TripCruiseTour" name="Trip" value="CruiseTour">
+          <label for="CruiseTour">Cruise Tour</label><br>
+
+          <p>4.What accommodation options are you looking for?<p>
+          <input type="radio" id="AccomodationBasic" name="Accomodation" value="Basic">
+          <label for="Basic">Basic</label><br>
+          <input type="radio" id="AccomodationComfortable" name="Accomodation" value="Comfortable">
+          <label for="Comfortable">Comfortable</label><br>
+          <input type="radio" id="AccomodationLuxury" name="Accomodation" value="Luxury">
+          <label for="Luxury">Luxury</label><br>
+          <input type="radio" id="AccomodationQuirky" name="Accomodation" value="Quirky">
+          <label for="Quirky">Quirky</label><br>
+
+
+  <div class="text-center next-button">
+            <input type="submit" onClick="passValue();" class="next" value="Submit &raquo;" style="border:none"/>
+  </div>
           <!--Displaying Selected Values Start-->
-         <div style="margin-left:10px">
-          Destination: <span id="destinationText"></span>
-          <script>
-            document.getElementById("destinationText").innerHTML=localStorage.getItem("destinationValue");
-          </script>
-          <!--
-          <br>
-           People: <span id="peopleText"></span>
-          <script>
-            document.getElementById("peopleText").innerHTML=localStorage.getItem("peopleValue");
-          </script>
-          <br>
-           Date: <span id="dateText"></span>
-          <script>
-            document.getElementById("dateText").innerHTML=localStorage.getItem("datesValue");
-          </script>
-          <br>
-           Cost: <span id="costText"></span>
-          <script>
-            document.getElementById("costText").innerHTML=localStorage.getItem("costValue");
-          </script>
-          -->
-          <br>
-          No of people:<span id="peoplesDisplay"></span>
-          <script>
-            /*Getting the no of peoples value from pagination 1 and displaying in span id="result"*/
-            document.getElementById("peoplesDisplay").innerHTML=localStorage.getItem("peoplesValue");
-          </script>
-          <div id="exactStartAndEndDate">
-           Exact Start Date: <span id="exactStartDateText"></span>
-          <script>
-            document.getElementById("exactStartDateText").innerHTML=localStorage.getItem("exactStartDateValue");
-          </script>
-          <br>
-          Exact End Date:<span id="exactEndDateText"></span>
-          <script>
-            /*Getting the no of peoples value from pagination 1 and displaying in span id="result"*/
-            document.getElementById("exactEndDateText").innerHTML=localStorage.getItem("exactEndDateValue");
-          </script>
-          </div>
-           <div id="approxStartAndEndDate">
-           Approx Start Date: <span id="approxStartDateText"></span>
-          <script>
-            document.getElementById("approxStartDateText").innerHTML=localStorage.getItem("approxStartDateValue");
-          </script>
-          <br>
-          Approx End Date:<span id="approxEndDateText"></span>
-          <script>
-            /*Getting the no of peoples value from pagination 1 and displaying in span id="result"*/
-            document.getElementById("approxEndDateText").innerHTML=localStorage.getItem("approxEndDateValue");
-          </script>
-          </div>
-          <div id="dateNotDecided">
-            <span id="dateNotDecidedText"> Date: Not Decided</span>
-          </div>
-           Selected Date:<span id="selectedDate"></span>
-          <script>
-            /*Getting the no of peoples value from pagination 1 and displaying in span id="result"*/
-            document.getElementById("selectedDate").innerHTML=localStorage.getItem("selectedDateCategoryValue");
-          </script>
-        </div>
+         <div style="position: fixed;" class="selectedValuesCard">
+    <img src="img/Itenary.jpg" alt="Avatar" class="selectedValuesCard-image">
+    <div class="selectedValuesCard-content">
+    Destination: <span id="destinationText"></span>
+    <script>
+      document.getElementById("destinationText").innerHTML=localStorage.getItem("destinationValue");
+    </script>
+    <!--
+    <br>
+     People: <span id="peopleText"></span>
+    <script>
+      document.getElementById("peopleText").innerHTML=localStorage.getItem("peopleValue");
+    </script>
+    <br>
+     Date: <span id="dateText"></span>
+    <script>
+      document.getElementById("dateText").innerHTML=localStorage.getItem("datesValue");
+    </script>
+    <br>
+     Cost: <span id="costText"></span>
+    <script>
+      document.getElementById("costText").innerHTML=localStorage.getItem("costValue");
+    </script>
+  -->
+    <br>
+    No of people: <span id="peoplesDisplay"></span>
+    <script>
+      /*Getting the no of peoples value from pagination 1 and displaying in span id="result"*/
+      document.getElementById("peoplesDisplay").innerHTML=localStorage.getItem("peoplesValue");
+    </script>
+  </div>
   <!--Displaying Selected Values End-->
           <!--Next Button Start-->
-          <div class="text-center next-button">
-            <input type="submit" onClick="passValue();" class="next" value="Submit &raquo;" style="border:none"/>
-          </div>
+          
           <!--Next Button End-->
       </form>
       </div>
