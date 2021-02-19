@@ -5,6 +5,9 @@
 <link rel="stylesheet" type="text/css" href="css/paginationStyle.css">
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Rancho&display=swap" rel="stylesheet">
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
 </script>
 <script>
@@ -129,6 +132,8 @@ $(document).ready(function(){
 <!--Show hide date box-->
 </head>
 <body>
+   <h1 class="trip">Customize Your Trip</h1>
+   <img src="img/customize.png" class="img">
 <div class="container-fluid">
   <!--Page Navigation Start-->
   <nav>
@@ -171,8 +176,6 @@ $(document).ready(function(){
             <input type="date" id="exactEndDate" type="date" name="Dates " value="End Date" class="form-control" placeholder="Check-in date" style="margin-bottom:10px;">
           </div>
           <!--Exact Date Picker-->
-
-          
           <div class="approxDateBox">
             <label for="startdate">Approx Start Date:</label>
             <input type="date" id="approxStartDate" type="date" name="Dates " value="Start Date" class="form-control" placeholder="Check-in date" style="margin-bottom:10px;">
@@ -191,8 +194,9 @@ $(document).ready(function(){
   <!--Content End-->
   </div>
   <!--Displaying Selected Values Start-->
+  <div  class="selectedValuesCard">
    <div style="position: fixed;" class="selectedValuesCard">
-    <img src="img/everestTrek.jpg" alt="Avatar" class="selectedValuesCard-image">
+    <img src="img/Itenary.jpg" alt="Avatar" class="selectedValuesCard-image">
     <div class="selectedValuesCard-content">
     Destination: <span id="destinationText"></span>
     <script>
@@ -223,6 +227,8 @@ $(document).ready(function(){
     </script>
   </div>
   </div>
+</div>
   <!--Displaying Selected Values End-->
 </body>
 </html>
+ 

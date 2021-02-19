@@ -1,38 +1,561 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
 <head>
-	<title>Page Pagination</title>
-<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100&display=swap" rel="stylesheet">
+  <title>Pagination 4</title>
 <link rel="stylesheet" type="text/css" href="css/paginationStyle.css">
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Rancho&display=swap" rel="stylesheet">
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+</script>
+
+<style>
+
+/*********************************
+**********************************
+***********Card Start*************
+**********************************
+**********************************/
+/*For this specific page**/
+
+.card{
+  box-shadow: 0 4px 40px 0 rgba(0,0,0,0.2);
+  transition: 0.8s;
+  width: 550px;
+  margin-bottom:50px;
+  padding-bottom:20px;
+  margin-top:20px;
+
+}
+
+.card-image{
+  width:50%;
+  height:300px;
+  margin-left:140px;
+  margin-top:20px;
+}
+
+.card:hover {
+  box-shadow: 0 8px 80px 0 rgba(0,0,0,0.2);
+}
+
+/*USD and short title text field style for this specific page*/
+:root {
+  --input-color: #99A3BA;
+  --input-border: #CDD9ED;
+  --input-background: #fff;
+  --input-placeholder: #CBD1DC;
+  --input-border-focus: #007bff;
+  --group-color: var(--input-color);
+  --group-border: var(--input-border);
+  --group-background: #EEF4FF;
+  --group-color-focus: #fff;
+  --group-border-focus: var(--input-border-focus);
+  --group-background-focus: #007bff;
+}
+
+.form-field {
+  display: block;
+  width: 100%;
+  padding: 8px 16px;
+  line-height: 30px;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: inherit;
+  border-radius: 6px;
+  -webkit-appearance: none;
+  border: 1px solid var(--input-border);
+  background: var(--input-background);
+  transition: border 0.3s ease;
+}
+.form-field::-moz-placeholder {
+  color: var(--input-placeholder);
+}
+.form-field:-ms-input-placeholder {
+  color: var(--input-placeholder);
+}
+.form-field::placeholder {
+  color: var(--input-placeholder);
+}
+.form-field:focus {
+  outline: none;
+  border-color: var(--input-border-focus);
+}
+
+.form-group {
+  position: relative;
+  display: flex;
+  width: 100%;
+}
+.form-group > span,
+.form-group .form-field {
+  white-space: nowrap;
+  display: block;
+}
+.form-group > span:not(:first-child):not(:last-child),
+.form-group .form-field:not(:first-child):not(:last-child) {
+  border-radius: 0;
+}
+.form-group > span:first-child,
+.form-group .form-field:first-child {
+  border-radius: 6px 0 0 6px;
+}
+.form-group > span:last-child,
+.form-group .form-field:last-child {
+  border-radius: 0 6px 6px 0;
+}
+.form-group > span:not(:first-child),
+.form-group .form-field:not(:first-child) {
+  margin-left: -1px;
+}
+.form-group .form-field {
+  position: relative;
+  z-index: 1;
+  flex: 1 1 auto;
+  width: 1%;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.form-group > span {
+  text-align: center;
+  padding: 8px 12px;
+  font-size: 14px;
+  line-height: 25px;
+  color: var(--group-color);
+  background: var(--group-background);
+  border: 1px solid var(--group-border);
+  transition: background 0.3s ease, border 0.3s ease, color 0.3s ease;
+}
+.form-group:focus-within > span {
+  color: var(--group-color-focus);
+  background: var(--group-background-focus);
+  border-color: var(--group-border-focus);
+}
+
+
+/*Drop down style for this specific page*/
+.select {
+   position: relative;
+   display: flex;
+   width: 15em;
+   height: 3em;
+   line-height: 3;
+   background: #5c6664;
+   overflow: hidden;
+   border-radius: .25em;
+}
+
+/*Styling the radio button*/
+.radio-style{
+  margin-right:5px;
+}
+
+/*Stylling the characters remaining text*/
+#textarea_feedback{
+  display:none;
+}
+
+/*Styling the text field container*/
+.tourDescription-container {
+  position: relative;
+  width: 100%;
+  height: 150px;
+  color: white;
+}
+
+/*Bookmundi type floating text box*/
+.tourDescription-textbox {
+  display: none;
+  position:absolute;
+  top: -100px;
+  left: 550px;
+  background: white;
+  height: 270px;
+  opacity: 1 !important;
+  width: 350px;
+  color: #000;
+  float:right;
+  border:2px solid #000;
+  border-radius:5px;
+  font-size:15px;
+  padding:10px;
+  background: #3eb368;
+}
+
+</style>
+
+
+<script>
+  function checkDateSelected() { 
+  //Getting the value from overall date selector drop down menu (previous page)
+  var selectedDateDropDown=localStorage.getItem("selectedDateCategoryValue");
+  //Setting the value to local storage, can be accessed by selectedDateCategoryValue
+  localStorage.setItem("selectedDateCategoryValue",selectedDateDropDown);
+
+  //getting the exactStartAndEndDate container by id
+  var selectedExactDateCategory=document.getElementById("exactStartAndEndDate");
+  localStorage.setItem("selectedExactDateCategory",selectedExactDateCategory);
+
+  //getting the approxStartAndEndDate container by id
+  var selectedApproxDateCategory=document.getElementById("approxStartAndEndDate");
+  localStorage.setItem("selectedApproxDateCategoryValue",selectedApproxDateCategory);
+
+  //getting the dateNotDecided container by id
+  var dateNotDecided=document.getElementById("dateNotDecided");
+  localStorage.setItem("dateNotDecided",dateNotDecided);
+
+  //if the user has selected exactDate drop down in previous page
+  if(selectedDateDropDown ==1) {
+       //display the exact date category container
+       selectedExactDateCategory.style.display = "block";
+       //hide the other containers: approx date and date not decided container
+       selectedApproxDateCategory.style.display = "none";
+       dateNotDecided.style.display="none";
+       
+  }
+  //else if the user has selected approxDate drop down in previous page
+  else if (selectedDateDropDown ==2){
+    //hide the exact date category container
+    selectedExactDateCategory.style.display = "none";
+    //display the approx date container
+    selectedApproxDateCategory.style.display = "block";
+    //hide the date not decided container
+    dateNotDecided.style.display="none";
+  }
+  //else if the user has selected date not decided in previous page
+  else{
+    //hide the exact and approx start and end date container
+    selectedExactDateCategory.style.display = "none";
+    selectedApproxDateCategory.style.display = "none";
+    //display the date not decided container
+    dateNotDecided.style.display="block"
+  }
+
+}
+  //calling the checkDateSelected function to load the function as soon as the webpage loads/opens
+  window.onload = checkDateSelected;
+ 
+  /*document.getElementById("result").innerHTML=localStorage.getItem("destinationValue");
+  */
+  function passValue(){
+    /*Getting the value from travelPage destination text field and setting the value to destination variable */
+  var destination=localStorage.getItem("destinationValue");
+  /*Setting the destination variable value to localstorage*/
+  localStorage.setItem("destinationValueOne",destination);
+  /*
+  //Getting the value from travelPage people text field and setting the value to people variable
+  var people=localStorage.getItem("peopleValue");
+  //Setting the people variable value to localstorage
+  localStorage.setItem("peopleValueOne",people);
+
+  //Getting the value from travelPage dates text field and setting the value to dates variable
+  var dates=localStorage.getItem("datesValue");
+  //Setting the people variable value to localstorage
+  localStorage.setItem("datesValueOne",dates);
+
+  //Getting the value from travelPage cost text field and setting the value to cost variable
+  var cost=localStorage.getItem("costValue");
+  //Setting the people variable value to localstorage
+  localStorage.setItem("costValueOne",cost);
+  */
+
+  //Getting the value from pagination one peoples and setting to peoples variable
+  var peoples=localStorage.getItem("peoplesValue");
+  //Setting the value to local storage, can be accessed by destinationValue
+  localStorage.setItem("peoplesValueOne",peoples);
+
+  //Getting the value from previous page exact start date picker and setting to dates variable
+  var exactStartDate=localStorage.getItem("exactStartDateValue");
+  //Setting the value to local storage, can be accessed by datesValue
+  localStorage.setItem("exactStartDateValueOne",exactStartDate);
+
+  //Getting the value from previous page exact end date picker and setting to dates variable
+  var exactEndDate=localStorage.getItem("exactEndDateValue");
+  //Setting the value to local storage, can be accessed by datesValue
+  localStorage.setItem("exactEndDateValueOne",exactEndDate);
+
+  //Getting the value from previous page approx start date picker and setting to dates variable
+  var approxStartDate=localStorage.getItem("approxStartDateValue");
+  //Setting the value to local storage, can be accessed by datesValue
+  localStorage.setItem("approxStartDateValueOne",approxStartDate);
+
+  //Getting the value from previous page exact end date picker and setting to dates variable
+  var approxEndDate=localStorage.getItem("approxEndDateValue");
+  //Setting the value to local storage, can be accessed by datesValue
+  localStorage.setItem("approxEndDateValueOne",approxEndDate);
+
+  //Getting the value from overall date selector drop down menu (previous page)
+  var selectedDateDropDown=localStorage.getItem("selectedDateCategoryValue");
+  //Setting the value to local storage, can be accessed by selectedDateCategoryValue
+  localStorage.setItem("selectedDateCategoryValue",selectedDateDropDown);
+  
+
+
+  /*Navigating to pagination2.html*/
+/*
+  location.href = 'Pagination2.html';
+
+  location.href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=target@email.com";
+*/
+    /*
+    window.location.href = "mailto:mail@example.org?subject=Appoinment for financial consultation&body=Destination:"+destination+", No. of People:"+peoples+", Exact Start Date: "+exactStartDate+", Exact End Date:"+exactEndDate+", Approx Start Date: "+approxStartDate+", Approx End Date:"+approxEndDate+"";
+  */
+
+    //'%0D%0A'= break line in order to change line
+    var ebody='Destination:'+destination+ '%0D%0A'+ 'No. of People:'+peoples+ '%0D%0A' + 'Exact Start Date:'+exactStartDate+ '%0D%0A'+ 'Exact End Date:'+exactEndDate+ '%0D%0A' + 'Approx Start Date:'+approxStartDate+ '%0D%0A' + 'Approx End Date:' +approxEndDate;
+
+    //opening the gmail app and lading the mail to and body section
+    window.location.href = "mailto:mail@example.org?subject=Appoinment for financial consultation&body=" +ebody;
+  }
+
+</script>
+<!--jQuery for tour description text area-->
+<script>
+$(document).ready(function() {
+    var text_max = 200;
+    //function for recognizing the text area type
+    $('#tour-description').keyup(function() {
+
+        var text_length = $('#tour-description').val().length;
+        var text_remaining = text_max - text_length;
+
+        //customising bookmundi type logic
+        //show the characters remainig after the user begins to type
+        $("#textarea_feedback").show();
+        $("#tourDescription-textbox").hide();
+        //if the text length is 0 then hide the characters left text
+        if(text_length == 0){
+          $("#textarea_feedback").hide();
+        }
+        //else if the text length is less than 150
+        else if(text_length<150){
+          //replace the previous text
+          $('#textarea_feedback').html(text_length + ' Characters - Please add min 200 characters');
+          //change the label color
+          $('#textarea_feedback').css("color", "#000");
+        }
+        //else if the text length is more than or equal to 150 and text length is less than 200
+        else if(text_length>=150 && text_length<200){
+          //replace the previous text
+          $('#textarea_feedback').html(text_length + ' Characters - You are almost there');
+          //change the label color
+          $('#textarea_feedback').css("color", "#007bff");
+        }
+        //else if the text length is more than or equal to 200
+        else if (text_length>=200){
+          //replace the previous text
+          $('#textarea_feedback').html(text_length + ' Characters - Great! The more description, the better');
+          //change the label color
+          $('#textarea_feedback').css("color", "#3eb368");
+        }
+    });
+    //text area on focus event handler
+    //bookmundi type show or hide cntainer on text area focus
+    $( "#tour-description" ).focus(function() {
+      $("#tourDescription-textbox").show();
+
+    });
+
+    $( "#tour-description" ).focusout(function() {
+         $("#tourDescription-textbox").hide();
+    });
+    
+
+});
+</script>
 
 </head>
 <body>
+  <h1 class="trip">Trip Details</h1>
+   <img src="img/customize.png" class="img">
 <div class="container-fluid">
-  <h1 class="text-white text-center m-5">The Provider</h1>
-  <h1 class="text-white text-center">Welcome To Fourth Page</h1>
-  <h1 class="display-1 text-white text-center m-5">4</h1>
+  <!--Page Navigation Start-->
+  <nav>
+    <ul class="pagination justify-content-center pt-5">
+      <li class="page-item" title="Previous">
+        <a class="page-link rounded-circle m-1" href="pagination3.html">
+          <i class="fas fa-chevron-left text-primary"></i></a></li>
+
+      <li class="page-item"><a class="page-link rounded-circle m-1" href="Pagination1.html">1</a></li>
+      <li class="page-item"><a class="page-link rounded-circle m-1" href="Pagination2.html">2</a></li>
+      <li class="page-item"><a class="page-link rounded-circle m-1" href="Pagination3.html">3</a></li>
+      <li class="page-item active"><a class="page-link rounded-circle m-1" href="Pagination4.html">4</a></li>
+      <li class="page-item"><a class="page-link rounded-circle m-1">5</a></li>
+      <li class="page-item fixed-bottom pb-5 text-center" title="Next"> 
+      </li>
+    </ul>
+  </nav>
+  <!--Page Navigation End-->
+  <!--Content Start-->
+  <div class="card-container">
+    <div class="card justify-content-center">
+      <img src="img/logo.png" alt="Avatar" class="card-image">
+      <div class="container">
+        <h5 style="margin-bottom:20px"><b>Last few details... </b></h5>  
+        <form action="">
+          <div class="row">
+            <div class="col-md-6">
+              <p style="text-align: left; font-weight:500" class="font-italic">Approx budget per person: </p> 
+              <div class="form-group">
+                <span>USD</span>
+                <input class="form-field" type="text" placeholder="e.g 500" required>
+              </div>
+            </div>
+            <div  class="col-md-6">
+              <p style="text-align: left; font-weight:500" class="font-italic">Budget flexibility:</p> 
+              <div class="select" style="margin-bottom:10px;">
+               <select name="format" id="budgetFlexibility" required>
+                  <option selected disabled value="">Select Budget Flexibility</option>
+                  <option value="ExactDate">This is my max budget</option>
+                  <option value="ApproxDate">Flexibility upto 20% more</option>
+                  <option value="DateNotDecided">Very flexible</option>
+                  <option value="mobi" disabled></option>
+               </select>
+              </div>
+            </div>
+          </div>
+          <hr>
+          <!--Radio buttons Start-->
+          <div>
+            <p style="text-align: left; font-weight:500" class="font-italic">Approx budget per person: </p>
+            <div>
+              <label>
+                <input type="radio" id="male" name="budget-radio" value="male" class="radio-style" required>
+                <i style="font-style: normal">I need more information before I can start trip planning</i>
+              </label>
+              <label>
+                <input type="radio" id="female" name="budget-radio" value="female" class="radio-style">
+                <i style="font-style: normal">I'm ready to start trip planning</i>
+              </label>
+              <br>
+              <label>
+                <input type="radio" id="other" name="budget-radio" value="other" class="radio-style">
+                <i style="font-style: normal">I've done my homework and almost ready to book</i>
+              </label>
+            </div>
+          </div>
+          <!--Radio buttons End-->
+          <hr>
+          <!--Title and description Start-->
+          <div>
+            <!--Title-->
+          <div class="form-group">
+              <span>Title</span>
+              <input class="form-field" type="text" placeholder="Give your trip a short title" style="text-transform: capitalize;" required>
+          </div>
+          <!--Title-->
+          <!--Description-->
+          <div class="tourDescription-container">
+            <textarea class="form-field" id="tour-description" rows="4" cols="50" placeholder="Please describe your trip"  minlength="200" style="font-weight: 400; text-transform: capitalize;" required></textarea>
+            <div id="tourDescription-textbox" class="tourDescription-textbox">
+              <strong>Describe your trip</strong>
+              <hr>
+              <ul>
+                <li>Where do you want to start and end the journey?</li>
+                <li>Any attraction or places that you want to visit.</li>
+                <li>Any specific requirements, e.g medical requirements, specific interests?</li>
+              </ul>
+              Your valuable input will help us to customise your adventerous trip as best as possible
+            </div>
+          </div>
+          <!--Printing characters left Start-->
+          <p id="textarea_feedback" style="text-align:right; font-size:13px; font-style:italic; "></p>
+          <!--Printing characters left End -->
+          <!--Description-->
+          </div>
+          <hr>
+          <!--Title and Description End -->
+          <p style="text-align: left; font-weight:500" class="font-italic">Please provide your email: </p> 
+          <div class="form-group">
+              <input class="form-field" type="email" placeholder="someone@gmail.com" required>
+              <span>@gmail.com</span>
+          </div>
+          <!--Next Button Start-->
+          <div class="text-center next-button">
+            <input type="submit" onClick="passValue();" class="next" value="Next &raquo;" style="border:none"/>
+          </div>
+          <!--Next Button End-->
+      </form>
+      </div>
+    </div>
+  </div>
+  <!--Content End-->
+  </div>
+  <!--Displaying Selected Values Start-->
+  <div class="selectedValuesCard" >
+   <div style="position: fixed;" class="selectedValuesCard">
+    <img src="img/Itenary.jpg" alt="Avatar" class="selectedValuesCard-image">
+    <div class="selectedValuesCard-content">
+       <!--Displaying Selected Values Start-->
+         <div style="margin-left:10px">
+          Destination: <span id="destinationText"></span>
+          <script>
+            document.getElementById("destinationText").innerHTML=localStorage.getItem("destinationValue");
+          </script>
+          <!--
+          <br>
+           People: <span id="peopleText"></span>
+          <script>
+            document.getElementById("peopleText").innerHTML=localStorage.getItem("peopleValue");
+          </script>
+          <br>
+           Date: <span id="dateText"></span>
+          <script>
+            document.getElementById("dateText").innerHTML=localStorage.getItem("datesValue");
+          </script>
+          <br>
+           Cost: <span id="costText"></span>
+          <script>
+            document.getElementById("costText").innerHTML=localStorage.getItem("costValue");
+          </script>
+          -->
+          <br>
+          No of people:<span id="peoplesDisplay"></span>
+          <script>
+            /*Getting the no of peoples value from pagination 1 and displaying in span id="result"*/
+            document.getElementById("peoplesDisplay").innerHTML=localStorage.getItem("peoplesValue");
+          </script>
+          <div id="exactStartAndEndDate">
+           Exact Start Date: <span id="exactStartDateText"></span>
+          <script>
+            document.getElementById("exactStartDateText").innerHTML=localStorage.getItem("exactStartDateValue");
+          </script>
+          <br>
+          Exact End Date:<span id="exactEndDateText"></span>
+          <script>
+            /*Getting the no of peoples value from pagination 1 and displaying in span id="result"*/
+            document.getElementById("exactEndDateText").innerHTML=localStorage.getItem("exactEndDateValue");
+          </script>
+          </div>
+           <div id="approxStartAndEndDate">
+           Approx Start Date: <span id="approxStartDateText"></span>
+          <script>
+            document.getElementById("approxStartDateText").innerHTML=localStorage.getItem("approxStartDateValue");
+          </script>
+          <br>
+          Approx End Date:<span id="approxEndDateText"></span>
+          <script>
+            /*Getting the no of peoples value from pagination 1 and displaying in span id="result"*/
+            document.getElementById("approxEndDateText").innerHTML=localStorage.getItem("approxEndDateValue");
+          </script>
+          </div>
+          <div id="dateNotDecided">
+            <span id="dateNotDecidedText"> Date: Not Decided</span>
+          </div>
+           Selected Date:<span id="selectedDate"></span>
+          <script>
+            /*Getting the no of peoples value from pagination 1 and displaying in span id="result"*/
+            document.getElementById("selectedDate").innerHTML=localStorage.getItem("selectedDateCategoryValue");
+          </script>
+        </div>
+        <!--Displaying Selected Values End-->
+  </div>
+  </div>
 </div>
-
-<nav>
-  <ul class="pagination justify-content-center pt-5">
-    <li class="page-item" title="Previous">
-      <a class="page-link rounded-circle m-1" href="Pagination3.html">
-        <i class="fas fa-chevron-left text-primary"></i></a></li>
-
-    <li class="page-item"><a class="page-link rounded-circle m-1" href="Pagination1.html">1</a></li>
-    <li class="page-item"><a class="page-link rounded-circle m-1" href="Pagination2.html">2</a></li>
-    <li class="page-item"><a class="page-link rounded-circle m-1" href="Pagination3.html">3</a></li>
-    <li class="page-item active"><a class="page-link rounded-circle m-1" href="Pagination4.html">4</a></li>
-    <li class="page-item"><a class="page-link rounded-circle m-1" href="Pagination5.html">5</a></li>
-
-    <li class="page-item" title="Next">
-      <a class="page-link rounded-circle m-1" href="Pagination5.html">
-        <i class="fas fa-chevron-right text-primary "></i></a></li>
- 
-  </ul>
-</nav>
-
+  <!--Displaying Selected Values End-->
+  
 </body>
 </html>
