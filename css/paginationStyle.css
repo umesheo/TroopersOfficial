@@ -2,8 +2,11 @@
     /*background: url(1.jpg) no-repeat center;*/
     /*background-size: cover;*/
     height: 100vh;
+    background-color: #F4FAFB !important;
 
   }
+
+
 
 .container-fluid{
   /*background-color: #000;*/
@@ -21,9 +24,11 @@
 **********************************/
 .next-button .next {
   text-decoration: none !important;
+  background-color: #2a9df4;
   display: inline-block;
   padding: 8px 16px;
   outline: none;
+  border-radius: 20px;
 }
 
 .next-button .next:hover {
@@ -142,7 +147,11 @@ select::-ms-expand {
 .approxDateBox{
   display:none;
 }
-
+.trip{
+  font-family: 'Rancho', cursive;
+  text-align: center;
+  font-weight: 600;
+}
 
 /*********************************
 **********************************
@@ -150,17 +159,33 @@ select::-ms-expand {
 **********************************
 **********************************/
 .selectedValuesCard{
+  position: fixed;
+  background-color: transparent;
+  top: 0px;
+  left: 1200px;
   box-shadow: 0 4px 40px 0 rgba(0,0,0,0.2);
   transition: 0.8s;
   width: 230px;
   border-radius: 10px;
+ 
+  
+
+
+}
+.img{
+  position: fixed;
+  width: 480px;
+  height: 400px;
+
+
+  top: 160px;
 }
 
 .selectedValuesCard-image {
   /* Add shadows to create the "card" effect */
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
-  display:contain;
+  display:cover;
   width:100%;
   height:200px
 }

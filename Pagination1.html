@@ -5,6 +5,9 @@
 <link rel="stylesheet" type="text/css" href="css/paginationStyle.css">
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Rancho&display=swap" rel="stylesheet">
 <script>
   /*document.getElementById("result").innerHTML=localStorage.getItem("destinationValue");
   */
@@ -48,6 +51,10 @@
 </script>
 </head>
 <body>
+    <h1 class="trip">Customize Your Trip</h1>
+   
+      <img src="img/customize.png" class="img">
+   
 <div class="container-fluid">
   <!--Page Navigation Start-->
   <nav>
@@ -65,6 +72,7 @@
       </li>
     </ul>
   </nav>
+
   <!--Page Navigation End-->
   <!--Content Start-->
   <div class="card-container">
@@ -96,8 +104,8 @@
   <!--Content End-->
   </div>
   <!--Displaying Selected Values Start-->
-   <div style="position: fixed;" class="selectedValuesCard">
-    <img src="img/everestTrek.jpg" alt="Avatar" class="selectedValuesCard-image">
+   <div  class="selectedValuesCard">
+    <img src="img/Itenary.jpg" alt="Avatar" class="selectedValuesCard-image">
     <div class="selectedValuesCard-content">
       Destination: <span id="destinationText"></span>
       <script>
