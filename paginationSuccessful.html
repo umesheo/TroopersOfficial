@@ -173,6 +173,7 @@
   position:absolute;
   top: -100px;
   left: 550px;
+  background: white;
   height: 270px;
   opacity: 1 !important;
   width: 350px;
@@ -194,6 +195,7 @@
 .italic-font{
   font-family: "Roboto",Arial,Verdana,Helvetica,sans-serif;
   font-size:15px;
+
 }
 
 /*Font awesome check box Icons style*/
@@ -203,6 +205,8 @@
   font-size:20px;
   margin-left:5px;
 }
+
+
 </style>
 
 
@@ -330,36 +334,37 @@
   //Setting the value to local storage, can be accessed by tripValueOne
   localStorage.setItem("activitiesValueOne",activities);
 
-   //Getting the value from current page approx budget text field and setting to budget variable
-  var budget=document.getElementById("approxBudget").value;
-  //Setting the value to local storage, can be accessed by budgetValue
-  localStorage.setItem("approxBudgetValue",budget);
+  //Getting the value from previous page approx budget text field and setting to budget variable
+  var budget=localStorage.getItem("approxBudgetValue");
+  //Setting the value to local storage, can be accessed by budgetValueOne
+  localStorage.setItem("approxBudgetValueOne",budget);
 
-  //Getting the value from current page budgetFlexibility drop down menu
-  var budgetFlexibilityDropdown=document.getElementById("budgetFlexibility").value;
-  //Setting the value to local storage, can be accessed by datesValue
-  localStorage.setItem("budgetFlexibilityValue", budgetFlexibilityDropdown);
+  //Getting the value from previous page budgetFlexibility drop down menu
+  var budgetFlexibilityDropdown=localStorage.getItem("budgetFlexibilityValue");
+  //Setting the value to local storage, can be accessed by budgetFlexibilityValueOne
+  localStorage.setItem("budgetFlexibilityValueOne", budgetFlexibilityDropdown);
 
-  //Getting the value from current page trip stage radio button
-  var tripStage = document.querySelector('input[name=tripStage-radio]:checked').value;
-  //Setting the value to local storage, can be accessed by tripStageValue
-  localStorage.setItem("tripStageValue", tripStage);
+  //Getting the value from previous page trip stage radio button
+  var tripStage=localStorage.getItem("tripStageValue");
+  //Setting the value to local storage, can be accessed by tripStageValueOne
+  localStorage.setItem("tripStageValueOne", tripStage);
 
-  //Getting the value from current page trip title text field
-  var tripTitle = document.getElementById("tripTitle").value;
-  //Setting the value to local storage, can be accessed by tripTitleValue
-  localStorage.setItem("tripTitleValue", tripTitle);
+  //Getting the value from previous page trip title text field
+  var tripTitle=localStorage.getItem("tripTitleValue");
+  //Setting the value to local storage, can be accessed by tripStageValueOne
+  localStorage.setItem("tripTitleValueOne", tripTitle);
 
-  //Getting the value from current page trip description text area
-  var tripDescription = document.getElementById("tour-description").value;
-  //Setting the value to local storage, can be accessed by tripDescriptionValue
-  localStorage.setItem("tripDescriptionValue", tripDescription);
+  //Getting the value from previous page trip description text area
+  var tripDescription=localStorage.getItem("tripDescriptionValue");
+  //Setting the value to local storage, can be accessed by tripDescriptionValueOne
+  localStorage.setItem("tripSTitleValueOne", tripDescription);
 
-  
-  //Getting the value from current page email text field
-  var customizeEmail = document.getElementById("customizeEmail").value;
-  //Setting the value to local storage, can be accessed by tripDescriptionValue
-  localStorage.setItem("customizeEmailValue", customizeEmail);
+   //Getting the value from previous page customizeEmail text field
+  var customizeEmail=localStorage.getItem("customizeEmailValue");
+  //Setting the value to local storage, can be accessed by customizeEmailValue
+  localStorage.setItem("customizeEmailValueOne", customizeEmail);
+
+
   /*Navigating to pagination2.html*/
 /*
   location.href = 'Pagination2.html';
@@ -369,13 +374,12 @@
     /*
     window.location.href = "mailto:mail@example.org?subject=Appoinment for financial consultation&body=Destination:"+destination+", No. of People:"+peoples+", Exact Start Date: "+exactStartDate+", Exact End Date:"+exactEndDate+", Approx Start Date: "+approxStartDate+", Approx End Date:"+approxEndDate+"";
   */
-  /*
+
     //'%0D%0A'= break line in order to change line
-    var ebody='Destination:'+destination+ '%0D%0A'+ 'No. of People:'+peoples+ '%0D%0A' + 'Exact Start Date:'+exactStartDate+ '%0D%0A'+ 'Exact End Date:'+exactEndDate+ '%0D%0A' + 'Approx Start Date:'+approxStartDate+ '%0D%0A' + 'Approx End Date:' +approxEndDate;
+    var ebody='Email:'+customizeEmail+'@gmail.com' + '%0D%0A'+ 'Destination: '+destination+ '%0D%0A'+ 'No. of People: '+peoples+ '%0D%0A' + 'Exact Start Date: '+exactStartDate+ '%0D%0A'+ 'Exact End Date: '+exactEndDate+ '%0D%0A' + 'Approx Start Date: '+approxStartDate+ '%0D%0A' + 'Approx End Date: ' +approxEndDate + '%0D%0A' + 'Activities: ' +activities+ '%0D%0A' + 'Age: ' +age+ '%0D%0A' + 'Tour type: ' + trip + '%0D%0A' +'Accomodation type: ' +accomodation+ '%0D%0A' + 'Approx budget: ' +budget+ '%0D%0A' +'Budget flexibility: ' + budgetFlexibilityDropdown+ '%0D%0A' +'Trip stage: ' +tripStage+ '%0D%0A' + 'Trip title: ' +tripTitle+ '%0D%0A' + 'Description: ' +tripDescription;
 
     //opening the gmail app and lading the mail to and body section
-    window.location.href = "mailto:mail@example.org?subject=Appoinment for financial consultation&body=" +ebody;
-    */
+    window.location.href = "mailto:mail@example.org?subject=Customized Trip Plan&body=" +ebody;
   }
 
 </script>
@@ -436,21 +440,21 @@ $(document).ready(function() {
 
 </head>
 <body>
-  <h1 class="trip">Trip Details</h1>
+  <h1 class="trip">Connect With Travel Expert</h1>
    <img src="img/customize.png" class="img">
 <div class="container-fluid">
   <!--Page Navigation Start-->
   <nav>
     <ul class="pagination justify-content-center pt-5">
       <li class="page-item" title="Previous">
-        <a class="page-link rounded-circle m-1" href="pagination3.html">
+        <a class="page-link rounded-circle m-1" href="pagination4.html">
           <i class="fas fa-chevron-left text-primary"></i></a></li>
 
       <li class="page-item"><a class="page-link rounded-circle m-1" href="Pagination1.html">1</a></li>
       <li class="page-item"><a class="page-link rounded-circle m-1" href="Pagination2.html">2</a></li>
       <li class="page-item"><a class="page-link rounded-circle m-1" href="Pagination3.html">3</a></li>
-      <li class="page-item active"><a class="page-link rounded-circle m-1" href="Pagination4.html">4</a></li>
-      <li class="page-item"><a class="page-link rounded-circle m-1">5</a></li>
+      <li class="page-item"><a class="page-link rounded-circle m-1" href="Pagination4.html">4</a></li>
+      <li class="page-item  active"><a class="page-link rounded-circle m-1">5</a></li>
       <li class="page-item fixed-bottom pb-5 text-center" title="Next"> 
       </li>
     </ul>
@@ -461,188 +465,15 @@ $(document).ready(function() {
     <div class="card justify-content-center">
       <img src="img/logo.png" alt="Avatar" class="card-image">
       <div class="container">
-        <h5 style="margin-bottom:40px" class="text-center"><b>Last few details... </b></h5> 
-        <form action="pagination5.html">
-          <div class="row">
-            <div class="col-md-6">
-              <h6 style="text-align: left;" class="font-italic">Approx budget per person <span class="asterisk-style">*</span> </h6> 
-              <div class="form-group">
-                <span>USD</span>
-                <input class="form-field" type="text" placeholder="e.g 500" id="approxBudget" required>
-              </div>
-            </div>
-            <div  class="col-md-6">
-              <h6 style="text-align: left; font-weight:500" class="font-italic">Budget flexibility <span class="asterisk-style">*</span> </h6> 
-              <div class="select" style="margin-bottom:10px;">
-               <select name="format" id="budgetFlexibility" required>
-                  <option selected disabled value="">Select Budget Flexibility</option>
-                  <option value="This is my max budget">This is my max budget</option>
-                  <option value="Flexibility upto 20% more">Flexibility upto 20% more</option>
-                  <option value="Very flexible">Very flexible</option>
-                  <option value="mobi" disabled></option>
-               </select>
-              </div>
-            </div>
-          </div>
-          <hr>
-          <!--Radio buttons Start-->
-          <div>
-            <h6 style="text-align: left;" class="font-italic">What trip planning stage are you at? <span class="asterisk-style">*</span> </h6>
-            <div>
-              <label>
-                <input type="radio" id="male" name="tripStage-radio" value="I need more information before I can start trip planning" class="radio-style" required>
-                <i style="font-style: normal">I need more information before I can start trip planning</i>
-              </label>
-              <label>
-                <input type="radio" id="female" name="tripStage-radio" value="I'm ready to start trip planning" class="radio-style">
-                <i style="font-style: normal">I'm ready to start trip planning</i>
-              </label>
-              <br>
-              <label>
-                <input type="radio" id="other" name="tripStage-radio" value="I've done my homework and almost ready to book" class="radio-style">
-                <i style="font-style: normal">I've done my homework and almost ready to book</i>
-              </label>
-            </div>
-          </div>
-          <!--Radio buttons End-->
-          <hr>
-          <!--Title and description Start-->
-          <div>
-            <!--Title-->
-          <div class="form-group">
-              <span>Title</span>
-              <input class="form-field" type="text" placeholder="Give your trip a short title" id="tripTitle" required>
-          </div>
-          <!--Title-->
-          <!--Description-->
-          <div class="tourDescription-container">
-            <textarea class="form-field" id="tour-description" minlength="200" rows="4" cols="50" placeholder="Please describe your trip" style="font-weight: 400; " required></textarea>
-            <div id="tourDescription-textbox" class="tourDescription-textbox">
-              <strong>Describe your trip</strong>
-              <hr>
-              <ul style="font-weight:500;color:#fff">
-                <li>Where do you want to start and end the journey?</li>
-                <li>Any attraction or places that you want to visit and your day wise tour structure</li>
-                <li>Any specific requirements, e.g medical requirements, specific interests?</li>
-              </ul>
-              <p>Your valuable input will help us to customise your adventerous trip as best as possible</p>
-            </div>
-          </div>
-          <!--Printing characters left Start-->
-          <p id="textarea_feedback" style="text-align:right; font-size:13px; font-style:italic; "></p>
-          <!--Printing characters left End -->
-          <!--Description-->
-          </div>
-          <hr>
-          <!--Title and Description End -->
-          <h6 style="text-align: left;" class="font-italic">Please provide your email <span class="asterisk-style">*</span></h6> 
-          <div class="form-group">
-              <input class="form-field" type="text" placeholder="someone@gmail.com" id="customizeEmail" required>
-              <span>@gmail.com</span>
-          </div>
-          <!--Next Button Start-->
-          <div class="text-center next-button">
-            <input type="submit" onClick="passValue();" class="next" value="Next &raquo;" style="border:none"/>
-          </div>
-          <!--Next Button End-->
-      </form>
+        <h4 style="margin-bottom:40px" class="text-center">Your customized trip</h4> 
+        <hr> 
+        
+          
       </div>
     </div>
   </div>
   <!--Content End-->
   </div>
-  <!--Displaying Selected Values Start-->
-  <div class="selectedValuesCard" >
-   <div style="position: fixed;" class="selectedValuesCard">
-    <img src="img/Itenary.jpg" alt="Avatar" class="selectedValuesCard-image">
-    <div class="selectedValuesCard-content">
-       <!--Displaying Selected Values Start-->
-         <div style="margin-left:10px">
-          <span style="font-weight:500">Destination: </span><i class="fa fa-check-circle icons-style"></i><span id="destinationText" class="italic-font"></span>
-          <script>
-            document.getElementById("destinationText").innerHTML=localStorage.getItem("destinationValue");
-          </script>
-          <!--
-          <br>
-           People: <span id="peopleText"></span>
-          <script>
-            document.getElementById("peopleText").innerHTML=localStorage.getItem("peopleValue");
-          </script>
-          <br>
-           Date: <span id="dateText"></span>
-          <script>
-            document.getElementById("dateText").innerHTML=localStorage.getItem("datesValue");
-          </script>
-          <br>
-           Cost: <span id="costText"></span>
-          <script>
-            document.getElementById("costText").innerHTML=localStorage.getItem("costValue");
-          </script>
-          -->
-          <br>
-          <span style="font-weight:500">No of people: </span><i class="fa fa-check-circle icons-style"></i><span id="peoplesDisplay" class="italic-font"></span>
-          <script>
-            /*Getting the no of peoples value from pagination 1 and displaying in span id="result"*/
-            document.getElementById("peoplesDisplay").innerHTML=localStorage.getItem("peoplesValue");
-          </script>
-          <div id="exactStartAndEndDate">
-           <span style="font-weight:500">Exact Start Date: </span><i class="fa fa-check-circle icons-style"></i><span id="exactStartDateText" class="italic-font"></span>
-          <script>
-            document.getElementById("exactStartDateText").innerHTML=localStorage.getItem("exactStartDateValue");
-          </script>
-          <br>
-          <span style="font-weight:500">Exact End Date: </span><i class="fa fa-check-circle icons-style"></i><span id="exactEndDateText" class="italic-font"></span>
-          <script>
-            /*Getting the no of peoples value from pagination 1 and displaying in span id="result"*/
-            document.getElementById("exactEndDateText").innerHTML=localStorage.getItem("exactEndDateValue");
-          </script>
-          </div>
-           <div id="approxStartAndEndDate">
-           <span style="font-weight:500">Approx Start Date: </span><i class="fa fa-check-circle icons-style"></i><span id="approxStartDateText" class="italic-font"></span>
-          <script>
-            document.getElementById("approxStartDateText").innerHTML=localStorage.getItem("approxStartDateValue");
-          </script>
-          <br>
-          <span style="font-weight:500">Approx End Date: </span><i class="fa fa-check-circle icons-style"></i><span id="approxEndDateText" class="italic-font"></span>
-          <script>
-            /*Getting the no of peoples value from pagination 1 and displaying in span id="result"*/
-            document.getElementById("approxEndDateText").innerHTML=localStorage.getItem("approxEndDateValue");
-          </script>
-          </div>
-          <div id="dateNotDecided">
-            <span style="font-weight:500">Date: </span><i class="fa fa-check-circle icons-style"></i><span id="dateNotDecidedText" class="italic-font">Not Decided</span>
-          </div>
-           <span style="font-weight:500">Activities: </span><i class="fa fa-check-circle icons-style"></i><span id="activitiesText" class="italic-font"></span>
-          <script>
-            /*Getting the age value from pagination 3 and displaying in span id="accomodationText"*/
-            document.getElementById("activitiesText").innerHTML=localStorage.getItem("activitiesValue");
-          </script>
-          <br>
-          <span style="font-weight:500">Age: </span><i class="fa fa-check-circle icons-style"></i><span id="ageText" class="italic-font"></span>
-          <script>
-            /*Getting the age value from pagination 3 and displaying in span id="ageText"*/
-            document.getElementById("ageText").innerHTML=localStorage.getItem("ageValue");
-          </script>
-          <br>
-          <span style="font-weight:500">Tour type: </span><i class="fa fa-check-circle icons-style"></i><span id="tourText" class="italic-font"></span>
-          <script>
-            /*Getting the age value from pagination 3 and displaying in span id="tourText"*/
-            document.getElementById("tourText").innerHTML=localStorage.getItem("tripValue");
-          </script>
-          <br>
-           <span style="font-weight:500">Accomodation type: </span><i class="fa fa-check-circle icons-style"></i><span id="accomodationText" class="italic-font"></span>
-          <script>
-            /*Getting the age value from pagination 3 and displaying in span id="accomodationText"*/
-            document.getElementById("accomodationText").innerHTML=localStorage.getItem("accomodationValue");
-          </script>
-          <br>
-          <span style="font-weight:500">Selected Date: </span><i class="fa fa-check-circle icons-style"></i><span id="selectedDate" class="italic-font"></span>
-          <script>
-            /*Getting the no of peoples value from pagination 1 and displaying in span id="result"*/
-            document.getElementById("selectedDate").innerHTML=localStorage.getItem("selectedDateCategoryValue");
-          </script>
-        </div>
-        <!--Displaying Selected Values End-->
   </div>
   </div>
 </div>

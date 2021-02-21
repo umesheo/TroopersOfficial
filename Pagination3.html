@@ -5,9 +5,113 @@
 <link rel="stylesheet" type="text/css" href="css/paginationStyle.css">
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Rancho&display=swap" rel="stylesheet">
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
 </script>
+<!-- Google web font "Open Sans" -->
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> 
+<style>
+  /*********************************
+**********************************
+***********Card Start*************
+**********************************
+**********************************/
+/*For this specific page**/
 
+.card{
+  box-shadow: 0 4px 40px 0 rgba(0,0,0,0.2);
+  transition: 0.8s;
+  width: 550px;
+  margin-bottom:50px;
+  padding-bottom:20px;
+  margin-top:20px;
+
+}
+
+.card-image{
+  width:50%;
+  height:300px;
+  margin-left:140px;
+  margin-top:20px;
+}
+
+.card:hover {
+  box-shadow: 0 8px 80px 0 rgba(0,0,0,0.2);
+}
+
+/*Setting the margin from radio buttons and activities container*/
+.activities-radio-container{
+  margin-bottom:10px;
+}
+
+/*Style for activities radio buttons*/
+.activities-radio-container input[type="radio"] {
+  width: 15px;
+}
+
+.activities-radio-container label {
+  display: inline;
+  margin-right: 5px;
+  }
+
+input[type="checkbox"]{
+  width:19px;
+  height:19px;
+  vertical-align: middle;
+}
+
+/*Styling the activities-container check box of pagination 3*/
+#activities-container{
+  display:none;
+  border: 1px solid #000;
+  max-width:80%;
+  padding:10px;
+  border-radius:3px;
+  margin-bottom:20px;
+}
+
+/*Stling the activities-container label of pagination 3*/
+#activities-container label{
+  margin-right:20px;
+}
+
+
+/*Styling the desired fonts to italic for pagination 3*/
+.italic-font{
+  font-style:italic;
+}
+/*Asteric style*/
+.asterisk-style{
+ color: #FF0000;
+}
+
+/*Marin between label and checkbox*/
+.checkbox-style{
+  margin-left:5px;
+}
+/*Margin from radio button and label*/
+.radio-label{
+  margin-left:5px;
+}
+
+/*Styling the desired fonts to italic for pagination 3*/
+.italic-fonts{
+  font-family: "Roboto",Arial,Verdana,Helvetica,sans-serif;
+  font-size:15px;
+}
+
+/*Font awesome check box Icons style*/
+.icons-style{
+  color:#3eb368;
+  float:right;
+  font-size:20px;
+  margin-left:5px;
+}
+
+</style>
 <script>
   function checkDateSelected() { 
   //Getting the value from overall date selector drop down menu (previous page)
@@ -110,9 +214,29 @@
   //Setting the value to local storage, can be accessed by selectedDateCategoryValue
   localStorage.setItem("selectedDateCategoryValue",selectedDateDropDown);
 
-  var age = document.querySelector('input[name=Age]:checked').value;
-  localStorage.setItem("Age", age);
 
+  //Getting the value from age radio button from the current page
+  var age = document.querySelector('input[name=Age]:checked').value;
+  //Setting the value to local storage, can be accessed by ageValue
+  localStorage.setItem("ageValue", age);
+
+  //Getting the value from trip radio button from the current page
+  var trip = document.querySelector('input[name=Trip]:checked').value;
+  //Setting the value to local storage, can be accessed by tripValue
+  localStorage.setItem("tripValue", trip);
+
+  //Getting the value from accomodation radio button from the current page
+  var accomodation = document.querySelector('input[name=Accomodation]:checked').value;
+  //Setting the value to local storage, can be accessed by accomodationValue
+  localStorage.setItem("accomodationValue", accomodation);
+
+  /*  
+  var activities = $("input[name='scales']:checked").map(function() {
+                return this.value;
+            }).get().join(', ');
+  
+  localStorage.setItem("activitiesValue", activities);
+  */
 
   /*Navigating to pagination2.html*/
 /*
@@ -122,25 +246,76 @@
     /*
     window.location.href = "mailto:mail@example.org?subject=Appoinment for financial consultation&body=Destination:"+destination+", No. of People:"+peoples+", Exact Start Date: "+exactStartDate+", Exact End Date:"+exactEndDate+", Approx Start Date: "+approxStartDate+", Approx End Date:"+approxEndDate+"";
   */
-
+  /*
     //'%0D%0A'= break line in order to change line
     var ebody='Destination:'+destination+ '%0D%0A'+ 'No. of People:'+peoples+ '%0D%0A' + 'Exact Start Date:'+exactStartDate+ '%0D%0A'+ 'Exact End Date:'+exactEndDate+ '%0D%0A' + 'Approx Start Date:'+approxStartDate+ '%0D%0A' + 'Approx End Date:' +approxEndDate+ '%0D%0A'+'Age:'+age;
 
     //opening the gmail app and lading the mail to and body section
     window.location.href = "mailto:mail@example.org?subject=Appoinment for financial consultation&body=" +ebody;
+*/
 
+}
+/*
+  //display the activities container when the yes radio button is presssed
+  function displayContainer(){
+       document.getElementById('activities-container').style.display = 'block';
+    }
+  //hide the activities container when the no radio button is presssed
+  function hideContainer(){
+       document.getElementById('activities-container').style.display = 'none';
+    }
 
-  }
-
-
+*/
 
 </script>
+<script type="text/javascript">
+  //Function to add multiple selected check boxes values to an array
+    $(document).ready(function() {
+        //action when next button is clicked
+        $(".next").click(function(){
+           var activities = [];
+           //take the selected check boxes value and add to activities array
+           $.each($("input[name='scales']:checked"), function(){            
+                activities .push($(this).val());
+            });
+            //setting the check boxes checked value to localstorage and can be accessed by activitiesValue
+            localStorage.setItem("activitiesValue", activities);
+        });
+    });
+</script>
 
+<script>
+  //Action when the radio button is clicked
+$(document).ready(function(){
+    $('input[name="activites-radio"]').click(function(){
+        //Getting the value from the radio button
+        var inputValue = $(this).attr("value");
+        //Setting the value with . in front ie class name
+        var targetBox = $("." + inputValue);
+        //if targetBox is not matched then hide the container
+        $("#activities-container").not(targetBox).hide();
+        //if target box equals input value (activities-yes) then display the container
+        $(targetBox).show();
+    });
 
+//Action when the next button is pressed
+$('.next').click(function(){
+    //if the activities conainer (checkbox container) is visible
+    if ($('#activities-container').is(':visible')){
+        //check the length of the check boxes
+        checked = $("input[type=checkbox]:checked").length;
+        //if no checkbox is selected, then display an alert
+        if(!checked) {
+          alert("You must check at least one activity");
+          return false;
+      }
+    }   
+});
+});
+</script>
 </head>
 <body>
-   <h1 class="trip">Customize Your Trip</h1>
-   
+   <h1 class="trip">Trip Details</h1>
       <img src="img/customize.png" class="img">
 <div class="container-fluid">
   <!--Page Navigation Start-->
@@ -153,7 +328,7 @@
       <li class="page-item"><a class="page-link rounded-circle m-1" href="Pagination1.html">1</a></li>
       <li class="page-item"><a class="page-link rounded-circle m-1" href="Pagination2.html">2</a></li>
       <li class="page-item active"><a class="page-link rounded-circle m-1">3</a></li>
-      <li class="page-item"><a class="page-link rounded-circle m-1" href="Pagination4.html">4</a></li>
+      <li class="page-item"><a class="page-link rounded-circle m-1">4</a></li>
       <li class="page-item"><a class="page-link rounded-circle m-1">5</a></li>
       <li class="page-item fixed-bottom pb-5 text-center" title="Next"> 
       </li>
@@ -162,95 +337,237 @@
   <!--Page Navigation End-->
   <!--Content Start-->
   <div class="card-container">
-    <div class="card text-center justify-content-center">
+    <div class="card justify-content-center">
       <img src="img/logo.png" alt="Avatar" class="card-image">
       <div class="container">
-        <h4 style="margin-bottom:20px"><b>Trip Details</b></h4>  
-        <form action="">
-          
-          <p>1. Do you know which destinations and activities, that you'd like to explore? *<p>
-          <input type="radio" id="Destinationyes" name="Destination" value="yes">
-          <label for="yes">Yes</label><br>
-          <input type="radio" id="Destinationno" name="Destination" value="no">
-          <label for="no">No</label><br>
-          
-          <p>2. Primary age group of adults?<p>
-          <input type="radio" id="Age18" name="Age" value="18-25">
-          <label for="Age">18-25 yrs</label><br>
-          <input type="radio" id="Age36" name="Age" value="36-50">
-          <label for="Age">36-50 yrs</label><br>
-          <input type="radio" id="Age51" name="Age" value="51-64">
-          <label for="Age">51-64 yrs</label><br>
-          <input type="radio" id="Age65" name="Age" value="51-64">
-          <label for="Age">65+yrs</label><br>
-
-          <p>3.What type of tour are you looking for?<p>
-          <input type="radio" id="TripCustom" name="Trip" value="custom">
-          <label for="custom">Custom-made trip with guide</label><br>
-          <input type="radio" id="Tripcustomwithoutdriver" name="Trip" value="customwithoutdriver">
-          <label for="customwithoutdriver">Custom-made trip without guide.</label><br>
-          <input type="radio" id="TripGroupTour" name="Trip" value="GroupTour">
-          <label for="GroupTour">Group Tour</label><br>
-          <input type="radio" id="TripCruiseTour" name="Trip" value="CruiseTour">
-          <label for="CruiseTour">Cruise Tour</label><br>
-
-          <p>4.What accommodation options are you looking for?<p>
-          <input type="radio" id="AccomodationBasic" name="Accomodation" value="Basic">
-          <label for="Basic">Basic</label><br>
-          <input type="radio" id="AccomodationComfortable" name="Accomodation" value="Comfortable">
-          <label for="Comfortable">Comfortable</label><br>
-          <input type="radio" id="AccomodationLuxury" name="Accomodation" value="Luxury">
-          <label for="Luxury">Luxury</label><br>
-          <input type="radio" id="AccomodationQuirky" name="Accomodation" value="Quirky">
-          <label for="Quirky">Quirky</label><br>
-
-
-  <div class="text-center next-button">
-            <input type="submit" onClick="passValue();" class="next" value="Submit &raquo;" style="border:none"/>
-  </div>
-          <!--Displaying Selected Values Start-->
-         <div style="position: fixed;" class="selectedValuesCard">
-    <img src="img/Itenary.jpg" alt="Avatar" class="selectedValuesCard-image">
-    <div class="selectedValuesCard-content">
-    Destination: <span id="destinationText"></span>
-    <script>
-      document.getElementById("destinationText").innerHTML=localStorage.getItem("destinationValue");
-    </script>
-    <!--
-    <br>
-     People: <span id="peopleText"></span>
-    <script>
-      document.getElementById("peopleText").innerHTML=localStorage.getItem("peopleValue");
-    </script>
-    <br>
-     Date: <span id="dateText"></span>
-    <script>
-      document.getElementById("dateText").innerHTML=localStorage.getItem("datesValue");
-    </script>
-    <br>
-     Cost: <span id="costText"></span>
-    <script>
-      document.getElementById("costText").innerHTML=localStorage.getItem("costValue");
-    </script>
-  -->
-    <br>
-    No of people: <span id="peoplesDisplay"></span>
-    <script>
-      /*Getting the no of peoples value from pagination 1 and displaying in span id="result"*/
-      document.getElementById("peoplesDisplay").innerHTML=localStorage.getItem("peoplesValue");
-    </script>
-  </div>
-  <!--Displaying Selected Values End-->
-          <!--Next Button Start-->
-          
-          <!--Next Button End-->
-      </form>
+        <h5 style="margin-bottom:40px" class="text-center"><b>Your trip ideas and thoughts</b></h5> 
+        <form action="pagination4.html">
+          <h6>Do you know the activities that you'd like to perform? <span class="asterisk-style">*</span></h6>
+          <!--Activities picker radio button Start-->
+          <div class="activities-radio-container">
+            <!--Wrapping radio buttons in label in order to enable the radio button select even when the respective label is selected-->
+            <label>
+            <input type="radio" id="radio1" name="activites-radio"  value="activities-yes" required>
+            <i style="font-style: normal" class="radio-label">Yes</i>
+            </label>
+            <label>
+            <input type="radio" id="radio2" name="activites-radio"  value="activities-no">
+            <i style="font-style: normal" class="radio-label">No</i>
+            </label>
+          </div>
+          <!--Activities picker radio button End-->
+          <div id="activities-container" class="ml-5 activities-yes">
+            <p style="text-align:left;font-weight:600;" class="italic-font"> Activities in Nepal <span class="asterisk-style">*</span> </p>
+            <hr>
+            <div class="row">
+              <div class="col-md-7">
+              <input type="checkbox" id="activitiesCheckbox" name="scales"
+                    class="activities_checkbox" value="Active and Outdoor">
+              <label for="active-outdoor" class="italic-font checkbox-style">Active and Outdoor</label>
+              </div>
+              <div class="col-md-5">
+              <input type="checkbox" id="activitiesCheckbox" name="scales"
+                    class="activities_checkbox" value="Adventure">
+              <label for="scales" class="italic-font checkbox-style">Adventure</label>
+            </div>
+            </div>
+            <div class="row">
+              <div class="col-md-7">
+                <input type="checkbox" id="activitiesCheckbox" name="scales"
+                       value="Art and architecture">
+                <label for="artarch" class="italic-font checkbox-style">Art and architecture</label>
+              </div>
+              <div class="col-md-5">
+                <input type="checkbox" id="activitiesCheckbox" name="scales"
+                       value="Road Trips">
+                <label for="rt" class="italic-font checkbox-style">Road trips</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-7">
+                <input type="checkbox" id="activitiesCheckbox" name="scales"
+                       value="Bungee/swing jumping">
+                <label for="bs" class="italic-font checkbox-style">Bungee/swing jumping</label>
+              </div>
+              <div class="col-md-5">
+                <input type="checkbox" id="activitiesCheckbox" name="scales"
+                       value="Bicycle Tours">
+                <label for="bt" class="italic-font checkbox-style">Bicycle Tours</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-7">
+                <input type="checkbox" id="activitiesCheckbox" name="scales"
+                       value="Camping">
+                <label for="cp" class="italic-font checkbox-style">Camping</label>
+              </div>
+              <div class="col-md-5">
+                <input type="checkbox" id="activitiesCheckbox" name="scales"
+                       value="Canyoning">
+                <label for="cn" class="italic-font checkbox-style">Canyoning</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-7">
+                <input type="checkbox" id="activitiesCheckbox" name="scales"
+                        value="City sightseeing">
+                <label for="cs" class="italic-font checkbox-style">City sightseeing</label>
+              </div>
+              <div class="col-md-5">
+                <input type="checkbox" id="activitiesCheckbox" name="scales"
+                       value="Bus tours">
+                <label for="bts" class="italic-font checkbox-style">Bus tours</label>
+              </div>
+            </div>
+          </div>
+          <hr>
+          <!--Activities End-->
+          <div class="age-container">
+            <h6>Primary age group of adults? <span class="asterisk-style">*</span></h6>
+            <label>
+              <input type="radio" id="Age18" name="Age" value="18-25" required>
+              <i style="font-style: normal" class="radio-label">18-35 yrs</i>
+            </label>
+            <br>
+            <label>
+              <input type="radio" id="Age36" name="Age" value="36-50">
+              <i style="font-style: normal" class="radio-label">36-50 yrs</i>
+            </label>
+            <br>
+            <label>
+            <input type="radio" id="Age51" name="Age" value="51-64">
+            <i style="font-style: normal" class="radio-label">51-64 yrs</i>
+            </label>
+            <br>
+            <label>
+            <input type="radio" id="Age65" name="Age" value="65+">
+            <i style="font-style: normal" class="radio-label">65+yrs</i>
+            </label><br>
+          </div>
+          <hr>
+          <div class="type-tour">
+            <h6>What type of tour are you looking for? <span class="asterisk-style">*</span></h6>
+            <label>
+              <input type="radio" id="TripCustom" name="Trip" value="Custom-made trip with guide" required>
+              <i style="font-style: normal" class="radio-label">Custom-made trip with guide</i>
+            </label>
+            <br>
+            <label>
+              <input type="radio" id="Tripcustomwithoutdriver" name="Trip" value="Custom-made trip without guide">
+              <i style="font-style: normal" class="radio-label">Custom-made trip without guide</i>
+            </label>
+            <br>
+            <label>
+              <input type="radio" id="TripGroupTour" name="Trip" value="Group Tour">
+              <i style="font-style: normal" class="radio-label">Group Tour</i>
+            </label>
+            <br>
+            <label>
+            <input type="radio" id="TripCruiseTour" name="Trip" value="Cruise Tour">
+            <i style="font-style: normal" class="radio-label">Cruise Tour</i>
+            </label><br>
+          </div>
+          <hr>
+          <div class="accomodation-type">
+            <h6>What accommodation options are you looking for? <span class="asterisk-style">*</span></h6>
+            <label>
+              <input type="radio" id="AccomodationBasic" name="Accomodation" value="Basic" required>
+              <i style="font-style: normal" class="radio-label">Basic</i>
+            </label>
+            <br>
+            <label>
+              <input type="radio" id="AccomodationComfortable" name="Accomodation" value="Comfortable">
+              <i style="font-style: normal" class="radio-label">Comfortable</i>
+            </label>
+            <br>
+            <label>
+            <input type="radio" id="AccomodationLuxury" name="Accomodation" value="Luxury">
+            <i style="font-style: normal" class="radio-label">Luxury</i>
+            </label>
+            <br>
+            <label>
+              <input type="radio" id="AccomodationQuirky" name="Accomodation" value="Quirky">
+              <i style="font-style: normal" class="radio-label">Quirky</i>
+            </label>
+            <br>
+          </div>
+          <div class="text-center next-button mt-4">
+          <input type="submit" onClick="passValue();" class="next" value="Next &raquo;" style="border:none"/>
+          </div>
+          </form>
+        </div>
       </div>
     </div>
-
   </div>
-  <!--Content End-->
-  </div>
-  
+  <!--Displaying Selected Values Start-->
+  <div class="selectedValuesCard" >
+    <div style="position: fixed;" class="selectedValuesCard">
+        <img src="img/Itenary.jpg" alt="Avatar" class="selectedValuesCard-image">
+        <div class="selectedValuesCard-content">
+          <span style="font-weight:500">Destination: </span><i class="fa fa-check-circle icons-style"></i><span id="peoplesDisplay" class="italic-fonts"><span id="destinationText"></span>
+          <script>
+            document.getElementById("destinationText").innerHTML=localStorage.getItem("destinationValue");
+          </script>
+          <!--
+          <br>
+           People: <span id="peopleText"></span>
+          <script>
+            document.getElementById("peopleText").innerHTML=localStorage.getItem("peopleValue");
+          </script>
+          <br>
+           Date: <span id="dateText"></span>
+          <script>
+            document.getElementById("dateText").innerHTML=localStorage.getItem("datesValue");
+          </script>
+          <br>
+           Cost: <span id="costText"></span>
+          <script>
+            document.getElementById("costText").innerHTML=localStorage.getItem("costValue");
+          </script>
+        -->
+          <br>
+          <span style="font-weight:500">No of people: </span><i class="fa fa-check-circle icons-style"></i><span id="peoplesDisplay"></span>
+          <script>
+            /*Getting the no of peoples value from pagination 1 and displaying in span id="result"*/
+            document.getElementById("peoplesDisplay").innerHTML=localStorage.getItem("peoplesValue");
+          </script>
+          <div id="exactStartAndEndDate">
+           <span style="font-weight:600">Exact Start Date: </span><i class="fa fa-check-circle icons-style"></i><span id="exactStartDateText"></span>
+          <script>
+            document.getElementById("exactStartDateText").innerHTML=localStorage.getItem("exactStartDateValue");
+          </script>
+          <br>
+          <span style="font-weight:600">Exact End Date: </span><i class="fa fa-check-circle icons-style"></i><span id="exactEndDateText"></span>
+          <script>
+            /*Getting the no of peoples value from pagination 1 and displaying in span id="result"*/
+            document.getElementById("exactEndDateText").innerHTML=localStorage.getItem("exactEndDateValue");
+          </script>
+          </div>
+           <div id="approxStartAndEndDate">
+             <span style="font-weight:600">Approx Start Date: </span><i class="fa fa-check-circle icons-style"></i><span id="approxStartDateText"></span>
+            <script>
+              document.getElementById("approxStartDateText").innerHTML=localStorage.getItem("approxStartDateValue");
+            </script>
+            <br>
+            <span style="font-weight:600">Approx End Date: </span><i class="fa fa-check-circle icons-style"></i><span id="approxEndDateText"></span>
+            <script>
+              /*Getting the no of peoples value from pagination 1 and displaying in span id="result"*/
+              document.getElementById("approxEndDateText").innerHTML=localStorage.getItem("approxEndDateValue");
+            </script>
+          </div>
+          <div id="dateNotDecided">
+            <span style="font-weight:600">Date: </span><i class="fa fa-check-circle icons-style"></i><span id="dateNotDecidedText">Not Decided</span>
+          </div>
+          <!--
+           <span style="font-weight:500">Selected Date: <i class="fa fa-check-circle icons-style"></i></span><span id="selectedDate"></span>
+          <script>
+            /*Getting the no of peoples value from pagination 1 and displaying in span id="result"*/
+            document.getElementById("selectedDate").innerHTML=localStorage.getItem("selectedDateCategoryValue");
+          </script>
+        -->
+        </div>
+      </div>
+    </div>
+    <!--Displaying Selected Values End-->
 </body>
 </html>

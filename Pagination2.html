@@ -8,8 +8,26 @@
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Rancho&display=swap" rel="stylesheet">
+<!-- Google web font "Open Sans" -->
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
 </script>
+
+<style>
+  /*Styling the desired fonts to italic for pagination 3*/
+.italic-fonts{
+  font-family: "Roboto",Arial,Verdana,Helvetica,sans-serif;
+  font-size:15px;
+}
+
+/*Font awesome check box Icons style*/
+.icons-style{
+  color:#3eb368;
+  float:right;
+  font-size:20px;
+  margin-left:5px;
+}
+</style>
 <script>
   /*document.getElementById("result").innerHTML=localStorage.getItem("destinationValue");
   */
@@ -133,12 +151,8 @@ $(document).ready(function(){
 </head>
 <body>
    <h1 class="trip">Customize Your Trip</h1>
-<<<<<<< HEAD
    <img src="img/customize.png" class="img">
-=======
-   
-      <img src="img/customize.png" class="img">
->>>>>>> 40ee07f7e690f9c7ea4d7e8b499660fad3df3579
+   <img src="img/customize.png" class="img">
 <div class="container-fluid">
   <!--Page Navigation Start-->
   <nav>
@@ -203,7 +217,7 @@ $(document).ready(function(){
    <div style="position: fixed;" class="selectedValuesCard">
     <img src="img/Itenary.jpg" alt="Avatar" class="selectedValuesCard-image">
     <div class="selectedValuesCard-content">
-    Destination: <span id="destinationText"></span>
+    <span style="font-weight:500">Destination: </span><i class="fa fa-check-circle icons-style"></i><span id="destinationText"></span>
     <script>
       document.getElementById("destinationText").innerHTML=localStorage.getItem("destinationValue");
     </script>
@@ -225,7 +239,7 @@ $(document).ready(function(){
     </script>
   -->
     <br>
-    No of people: <span id="peoplesDisplay"></span>
+    <span style="font-weight:500">No of people: </span><i class="fa fa-check-circle icons-style"></i><span id="destinationText"><span id="peoplesDisplay"></span>
     <script>
       /*Getting the no of peoples value from pagination 1 and displaying in span id="result"*/
       document.getElementById("peoplesDisplay").innerHTML=localStorage.getItem("peoplesValue");

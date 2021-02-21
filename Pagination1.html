@@ -7,7 +7,23 @@
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link rel="preconnect" href="https://fonts.gstatic.com">
+<!-- Google web font "Open Sans" -->
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+<style>
+  /*Styling the desired fonts to italic for pagination 3*/
+.italic-fonts{
+  font-family: "Roboto",Arial,Verdana,Helvetica,sans-serif;
+  font-size:15px;
+}
 
+/*Font awesome check box Icons style*/
+.icons-style{
+  color:#3eb368;
+  float:right;
+  font-size:20px;
+  margin-left:5px;
+}
+</style>
 <script>
   /*document.getElementById("result").innerHTML=localStorage.getItem("destinationValue");
   */
@@ -104,18 +120,10 @@
   </div>
   <!--Displaying Selected Values Start-->
    <div  class="selectedValuesCard">
-<<<<<<< HEAD
    <div style="position: fixed; " class="selectedValuesCard">
     <img src="img/Itenary.jpg" alt="Avatar" class="selectedValuesCard-image">
-=======
-    <img src="img/Itenary.jpg" alt="Avatar" class="selectedValuesCard-image">
-
-   <div style="position: fixed; " class="selectedValuesCard">
-    <img src="img/Itenary.jpg" alt="Avatar" class="selectedValuesCard-image">
-
->>>>>>> 40ee07f7e690f9c7ea4d7e8b499660fad3df3579
     <div class="selectedValuesCard-content">
-      Destination: <span id="destinationText"></span>
+      <span style="font-weight:500">Destination: </span><i class="fa fa-check-circle icons-style"></i><span id="destinationText"><span id="destinationText"></span>
       <script>
         document.getElementById("destinationText").innerHTML=localStorage.getItem("destinationValue");
       </script>

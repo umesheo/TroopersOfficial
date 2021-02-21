@@ -165,7 +165,7 @@ select::-ms-expand {
   left: 1200px;
   box-shadow: 0 4px 40px 0 rgba(0,0,0,0.2);
   transition: 0.8s;
-  width: 280px;
+  width: 300px;
   border-radius: 10px;
  
   
@@ -213,24 +213,4 @@ select::-ms-expand {
 }
 
 
-/*Styling the activities-container of pagination 3*/
-#activities-container{
-  display:none;
-  border: 1px solid #007bff;
-  width:400px;
-  margin-left:60px;
-  padding:10px;
-  border-radius:3px;
-  margin-bottom:20px;
-}
 
-/*Stling the activities-container label of pagination 3*/
-#activities-container label{
-  margin-right:20px;
-}
-
-
-/*Styling the desired fonts to italic for pagination 3*/
-.italic-font{
-  font-style:italic;
-}
