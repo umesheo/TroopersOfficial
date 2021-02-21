@@ -165,7 +165,7 @@ select::-ms-expand {
   left: 1200px;
   box-shadow: 0 4px 40px 0 rgba(0,0,0,0.2);
   transition: 0.8s;
-  width: 230px;
+  width: 300px;
   border-radius: 10px;
  
   
@@ -199,6 +199,18 @@ select::-ms-expand {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
+/*Setting the date display to none by default in pagination 3*/
 #exactStartAndEndDate{
-  display:block;
+  display:none;
 }
+
+#approxStartAndEndDate{
+  display:none;
+}
+
+#dateNotDecided{
+  display:none;
+}
+
+
+
