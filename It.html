@@ -30,6 +30,101 @@
     <!-- responsive CSS -->
     <link rel="stylesheet" href="ItAssets/css/responsive.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <style>
+      .main{
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: 400;
+    text-align: center;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+.btn {
+  color: #ffffff;
+  padding: 0.8rem;
+  font-size: 14px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  font-weight: 400;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: transparent;
+}
+
+.btn:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cards_item {
+  display: flex;
+  padding: 1rem;
+}
+
+@media (min-width: 40rem) {
+  .cards_item {
+    width: 50%;
+  }
+}
+
+@media (min-width: 56rem) {
+  .cards_item {
+    width: 33.3333%;
+  }
+}
+
+.card {
+   background: linear-gradient(to bottom left, #EF8D9C 40%, #FFC39E 100%);
+  border-radius: 0.25rem;
+  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.card_content {
+  padding: 1rem;
+  background: linear-gradient(to bottom left, #EF8D9C 40%, #FFC39E 100%);
+}
+
+.card_title {
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  margin: 0px;
+  margin-bottom:10px;
+}
+
+.card_text {
+  color: #ffffff;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;    
+  font-weight: 400;
+
+}
+    </style>
     
   </head>
   <body>
@@ -198,7 +293,7 @@
     <div class="distibution-bg">
         <!---distibution area start-->
         <div class="distibution wow fadeInUp" id="OurSkills">
-            <div class="container">
+            <div class="container" style="padding-bottom:150px">
                 <div class="row">
                     <div class="col-12 text-center">
                     <div class="heading">
@@ -230,52 +325,53 @@
                 
                 
             </div>
-            <div class="whychoose" id="whychooseus"></div>
+            <div class="whychoose wow fadeInUp" id="whychooseus"></div>
                 <div class="row">
                     <div class="col-12 text-center">
                     <div class="heading">
                         <h1>Why Choose Us</h1>
                         <div class="space-10"></div>
                     </div>
-                     <!--3D Hover Card Start-->
-                     
+                    <div class="main" style="margin-top:20px">
+                      <ul class="cards">
+                        <li class="cards_item">
+                          <div class="card">
+                            <div class="card_image"><img src="ItAssets/img/AwesomeDesign.png"></div>
+                            <div class="card_content">
+                              <h2 class="card_title">Awesome Design</h2>
+                              <p class="card_text">We have an excellent team of IT graduates with creative approach for developing websites and desktop/mobile applications. The applications/website are created with unique themes and styles as you can see in the current website.</p>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="cards_item">
+                          <div class="card">
+                            <div class="card_image"><img src="ItAssets/img/FastService.png"></div>
+                            <div class="card_content">
+                              <h2 class="card_title">Fast Service</h2>
+                              <p class="card_text">As soon as the project is taken into consideration, the team consults with the client and the project is started as soon as possible. Hence, the service provided is very fast and the  project is completed within the given deadline.</p>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="cards_item">
+                          <div class="card">
+                            <div class="card_image"><img src="ItAssets/img/Reliable.png"></div>
+                            <div class="card_content">
+                              <h2 class="card_title">Reliable</h2>
+                              <p class="card_text">The service provided by the IT team is very reliable as the design and development of the website/application is carried by regular consultation with the client. The reviews given by the clients are taken into top consideration and are implemented in the project.</p>
+                              
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                     <!--3D Hover Card Start    
     
      <div class="cardwrapper">
       <div class="cardcontainer" id="c0">
         <div class="cardimage" id="i0">
           <div class="city">
-            <!--Put image here-->
+            
           <img src="ItAssets/img/AwesomeDesign.png" style="width: 300px; ">
-          <!--
-          <?xml version="1.0" encoding="utf-8"?>
-
-          <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-        viewBox="0 0 300 225" style="enable-background:new 0 0 300 225;" xml:space="preserve">
-          <ellipse class="st4" id="sh1" cx="170.5" cy ="124.75" rx="37.5" ry="37.5"/>
-          <ellipse id="XMLID_15_" class="st4" cx="170.5" cy="124.75" rx="27.5" ry="27.5"/>
-
-          <polygon id="XMLID_1_" class="st2" points="-0.301,224.5 74.849,149.5 150,224.5 "/>
-          <polygon id="XMLID_2_" class="st0" points="108,224.5 74.849,149.5 150,224.5 "/>
-          <polygon id="XMLID_4_" class="st2" points="207.256,225.5 253.849,179 300.443,225.5 "/>
-          <polygon id="XMLID_3_" class="st0" points="274.403,225.5 253.849,179 300.443,225.5 "/>
-          <line id="XMLID_5_" class="st1" x1="179" y1="202" x2="179" y2="226"/>
-          <line id="XMLID_6_" class="st1" x1="179" y1="207" x2="190" y2="207"/>
-          <line id="XMLID_7_" class="st1" x1="172" y1="214" x2="180" y2="214"/>
-          <line id="XMLID_8_" class="st1" x1="190" y1="202" x2="190" y2="207"/>
-          <line id="XMLID_9_" class="st1" x1="172" y1="207" x2="172" y2="214"/>
-          <circle id="XMLID_10_" class="st3" cx="87.5" cy="98.5" r="1.5"/>
-          <circle id="XMLID_11_" class="st3" cx="24.5" cy="68.5" r="2.5"/>
-          <circle id="XMLID_12_" class="st3" cx="219.5" cy="18.5" r="1.5"/>
-          <circle id="XMLID_13_" class="st3" cx="272.5" cy="03.5" r="2.0"/>
-          <circle id="XMLID_14_" class="st3" cx="144.5" cy="12.5" r="1.0"/>
-          <circle id="XMLID_10_" class="st3" cx="107.5" cy="328.5" r="1.5"/>
-          <circle id="XMLID_11_" class="st3" cx="24.5" cy="58.5" r="2.5"/>
-          <circle id="XMLID_12_" class="st3" cx="19.5" cy="128.5" r="1.5"/>
-          <circle id="XMLID_13_" class="st3" cx="72.5" cy="113.5" r="2.0"/>
-          <circle id="XMLID_14_" class="st3" cx="174.5" cy="92.5" r="1.0"/>
-
-          </svg>
-      -->
           </div>
         </div>
         <div class="cardstory" id="s0">
@@ -314,16 +410,10 @@
           </div>
         </div>
       </div>
-      <!--
-      <div class="page">
-        <h4>Hover the card</h4>
-        <ul><li> <<< </li>
-        <li> >>> </li>
-        </ul>
-        </div>
-      -->
+     
       </div> 
-     <!--3D Hover Card End-->
+
+     3D Hover Card End-->
                     <div class="space-90"></div>
                 </div>
                 </div>
@@ -435,8 +525,7 @@
                         <div class="space-60"></div>
                     </div>
                 </div>
-                <div class="row text-center">
-                    
+                <div class="row text-center justify-content-center">
                     <div class="col-12 col-md-6 col-lg-3">
                         <div class="single-team" style="">
                             <div class="single-team-img">

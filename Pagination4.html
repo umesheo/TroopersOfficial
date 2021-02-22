@@ -2,6 +2,8 @@
 <html>
 <head>
   <title>Pagination 4</title>
+  <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link rel="stylesheet" type="text/css" href="css/paginationStyle.css">
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
@@ -34,11 +36,26 @@
 
 .card-image{
   width:50%;
-  height:300px;
-  margin-left:140px;
+  height:19%;
   margin-top:20px;
 }
 
+
+
+
+/*media query for iphone x
+ @media only screen 
+    and (device-width : 375px) 
+    and (device-height : 812px) 
+    and (-webkit-device-pixel-ratio : 3) {
+      .card-image{
+        width:80%;
+       height:300px;
+        margin-left:40px;
+        margin-top:20px;
+      }
+    }
+*/
 .card:hover {
   box-shadow: 0 8px 80px 0 rgba(0,0,0,0.2);
 }
@@ -459,9 +476,11 @@ $(document).ready(function() {
   <!--Content Start-->
   <div class="card-container">
     <div class="card justify-content-center">
-      <img src="img/logo.png" alt="Avatar" class="card-image">
+      <div class="text-center">
+        <img src="img/logo.png" alt="Avatar" class="card-image">
+      </div>
       <div class="container">
-        <h5 style="margin-bottom:40px" class="text-center"><b>Last few details... </b></h5> 
+        <h5 style="margin-bottom:20px;margin-top:20px" class="text-center"><b>Last few details... </b></h5> 
         <form action="pagination5.html">
           <div class="row">
             <div class="col-md-6">
@@ -473,7 +492,7 @@ $(document).ready(function() {
             </div>
             <div  class="col-md-6">
               <h6 style="text-align: left; font-weight:500" class="font-italic">Budget flexibility <span class="asterisk-style">*</span> </h6> 
-              <div class="select" style="margin-bottom:10px;">
+              <div class="select" style="margin-bottom:10px;width:100%">
                <select name="format" id="budgetFlexibility" required>
                   <option selected disabled value="">Select Budget Flexibility</option>
                   <option value="This is my max budget">This is my max budget</option>
@@ -516,7 +535,7 @@ $(document).ready(function() {
           <!--Title-->
           <!--Description-->
           <div class="tourDescription-container">
-            <textarea class="form-field" id="tour-description" minlength="200" rows="4" cols="50" placeholder="Please describe your trip" style="font-weight: 400; " required></textarea>
+            <textarea class="form-field" id="tour-description" minlength="10" rows="4" cols="50" placeholder="Please describe your trip" style="font-weight: 400; " required></textarea>
             <div id="tourDescription-textbox" class="tourDescription-textbox">
               <strong>Describe your trip</strong>
               <hr>
