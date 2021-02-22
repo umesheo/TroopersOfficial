@@ -154,11 +154,18 @@ html {
 
 .animation-box {
   width: 100%;
-  height: 15rem;
+  height: 20rem;
   background-color: transparent;
-  margin: 0 auto;
+  margin: 10 auto;
   overflow: hidden;
   position: absolute;
+}
+@media (max-width: 767.98px) {
+  .animation-box {
+    width: 100%;
+    padding-bottom: 30px;
+      
+  }
 }
 
 .blog-container{
@@ -166,7 +173,7 @@ html {
 }
 .animation-container {
   width: 1000rem;
-  height: 30rem;
+  height: 40rem;
 }
 
 @keyframes topFadeOut {
@@ -258,7 +265,7 @@ html {
 }
 
 .first-text {
-  font-size: 4.4rem;
+  font-size: 4rem;
   position: absolute;
   left: 2.5rem;
   top: 5rem;
@@ -266,6 +273,11 @@ html {
   animation-name: topFadeOut;
   animation-duration: 5s;
   color: black;
+}
+@media (max-width:540px;){
+  .first-text{
+    display: none;
+  }
 }
 
 .second-text {
