@@ -133,6 +133,11 @@ html {
   background-color: transparent;
   transition: 0.9s;
 }
+@media(max-width: 540px){
+  .sticky-sidebar{
+    display: none;
+  }
+}
 
 /*Itinerary list ul*/
 .list-ul{
