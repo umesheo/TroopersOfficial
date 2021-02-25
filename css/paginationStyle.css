@@ -68,8 +68,7 @@
 
 .card-image{
   width:80%;
-  height:300px;
-  margin-left:40px;
+  height:19%;
   margin-top:20px;
 }
 
@@ -115,16 +114,19 @@ select {
 select::-ms-expand {
    display: none;
 }
+
 .select {
    position: relative;
    display: flex;
-   width: 20em;
+   width: 98%;
    height: 3em;
    line-height: 3;
    background: #5c6664;
    overflow: hidden;
    border-radius: .25em;
 }
+
+
 .select::after {
    content: '\25BC';
    position: absolute;
@@ -211,6 +213,33 @@ select::-ms-expand {
 #dateNotDecided{
   display:none;
 }
+
+
+/*Media query for laptop with touch and laptop with mdpi screen*/
+@media only screen and (max-width: 1280px){
+    .selectedValuesCard{
+      left:950px !important;
+    }
+}
+
+
+/*Media query for laptop with hidpi screen*/
+@media only screen and (max-width: 1440px){
+    .selectedValuesCard{
+      left:1100px;
+    }
+}
+
+/*Media query for laptop with touch and laptop with mdpi screen*/
+@media only screen and (max-width: 1240px){
+    .selectedValuesCard{
+      left:800px !important;
+      width:200px;
+    }
+}
+
+
+ 
 
 
 

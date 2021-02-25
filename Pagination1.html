@@ -2,11 +2,14 @@
 <html>
 <head>
 	<title>Page Pagination</title>
+  <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link rel="stylesheet" type="text/css" href="css/paginationStyle.css">
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Rancho&display=swap" rel="stylesheet">
 <!-- Google web font "Open Sans" -->
     <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
 <style>
@@ -23,6 +26,8 @@
   font-size:20px;
   margin-left:5px;
 }
+
+
 </style>
 <script>
   /*document.getElementById("result").innerHTML=localStorage.getItem("destinationValue");
@@ -91,15 +96,16 @@
   <!--Page Navigation End-->
   <!--Content Start-->
   <div class="card-container">
-    <div class="card text-center justify-content-center">
-      <img src="img/logo.png" alt="Avatar" class="card-image">
+    <div class="card paginationonecard text-center justify-content-center">
+      <div class="text-center">
+        <img src="img/logo.png" alt="Avatar" class="card-image">
+      </div>
       <div class="container">
-        <h4><b>No. of People Travelling</b></h4> 
-        <p>Architect & Engineer</p> 
+        <h4 class="titlePageOne" style="margin-bottom:20px"><b>No. of People Travelling</b></h4> 
         <form action="Pagination2.html">
-          <div class="select" style="margin-bottom:10px;">
-           <select name="format" id="peoples" required>
-              <option selected disabled value="">Select Number of People</option>
+          <div class="select selectPageOne" style="margin-bottom:20px;">
+           <select name="format" id="peoples" class="select-list" required>
+              <option selected disabled value="" id="option-value">Select Number of People</option>
               <option value="Single">Single</option>
               <option value="Couple">Couple</option>
               <option value="Family">Family</option>
@@ -109,7 +115,7 @@
           </div>
           <!--Next Button Start-->
           <div class="text-center next-button">
-            <input type="submit" onClick="passValue();" class="next" value="Next &raquo;" style="border:none"/>
+            <input type="submit" onClick="passValue();" class="next next_one" value="Next &raquo;" style="border:none"/>
           </div>
           <!--Next Button End-->
       </form>
