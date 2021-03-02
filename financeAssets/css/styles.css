@@ -2153,6 +2153,7 @@ hr.invis3 {
 }
 
 .services:hover .item a{
+
   transition-duration:1s !important;
   color: #2c73e8;
 }
@@ -2171,6 +2172,7 @@ hr.invis3 {
     padding: 15px;
     background-color: #FFF;
     margin-bottom: 15px;
+
 }
 
 .services i {
@@ -2221,13 +2223,13 @@ hr.invis3 {
 
 .services .rectangle {
     width: 1485px;
-    height: 550px !important;
+    height: 600px !important;
     position: absolute;
     transform: rotate(-4deg);
     z-index: -1; 
     right: 18px; 
     bottom:130px;
-    background-color: #2c73e8;
+    background-color: #40becd;
 
 
 }
