@@ -335,6 +335,13 @@ p:last-child { margin-bottom: 0; }
     position: relative;
     background-size: cover;
 }
+/*Gansu Package Cover Image*/
+.tm-banner-bgGa {
+    background: url(../img/gansuPackageCover.jpg) center top no-repeat;    
+    min-height: 720px;
+    position: relative;
+    background-size: cover;
+}
 
 .tm-banner-row { 
     position: relative;

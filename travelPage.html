@@ -162,10 +162,17 @@
 }
 </style>
 <script>
-$(document).ready(function(){
+function displayPackages(){
+
     $('#selectedCountryCategory').on('change', function() {
       //if the user selects Nepal
-      if ( this.value == 'Nepal')
+      if ( this.value == 'None'){
+        //display the Nepal packages
+        $(".travelNepalContainer").show();
+        //hide the China packages
+        $(".travelChinaContainer").hide();
+      }
+      else if ( this.value == 'Nepal')
       //.....................^.......
       {
          //display the Nepal packages
@@ -182,6 +189,14 @@ $(document).ready(function(){
         $(".travelChinaContainer").show();
       }
     });
+}
+
+$(document).ready(function() {
+    displayPackages();
+});
+
+$(window).load(function() {
+    displayPackages();
 });
 
 </script>
@@ -731,21 +746,34 @@ $(document).ready(function(){
         </div>
         <div class="row mt-5">
          <div class="property-card card_one">
-    <a href="beijingPackage.html">
-      <div class="property-imageB">
-        <div class="property-image-title">
-          <!-- Optional <h5>Card Title</h5> If you want it, turn on the CSS also. -->
+          <a href="beijingPackage.html">
+            <div class="property-imageB">
+              <div class="property-image-title">
+                <!-- Optional <h5>Card Title</h5> If you want it, turn on the CSS also. -->
+              </div>
+            </div></a>
+          <div class="property-description">
+            <h5> Beijing </h5>
+            <p>Let's visit Beijing. Why not create a magical moment with Beijing visit. See more packages in Beijing.</p>
+          </div>
+          <a href="beijingPackage.html">
+          </a>
         </div>
-      </div></a>
-    <div class="property-description">
-      <h5> Beijing </h5>
-      <p>Let's visit Beijing. Why not create a magical moment with Beijing visit. See more packages in Beijing.</p>
-    </div>
-    <a href="beijingPackage.html">
-     
-    </a>
-  </div>
-    </div>
+         <div class="property-card card_one">
+          <a href="gansuPackage.html">
+            <div class="property-imageGa">
+              <div class="property-image-title">
+                <!-- Optional <h5>Card Title</h5> If you want it, turn on the CSS also. -->
+              </div>
+            </div></a>
+          <div class="property-description">
+            <h5> Gansu </h5>
+            <p>Let's visit Gansu. Why not create a magical moment with Gansu visit. See more packages in Gansu.</p>
+          </div>
+          <a href="gansuPackage.html">
+          </a>
+        </div>
+      </div>
     </div>
   </div>
  </div>

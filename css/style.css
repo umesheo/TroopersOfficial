@@ -519,7 +519,7 @@ html {
 }
 /*China Package Card Images*/
 
-/*Beijing image*/
+/*Beijing card image*/
 .property-imageB
 {
   height:6em;
@@ -531,6 +531,22 @@ html {
   -o-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
   transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
   background-image:url("../img/beijingPackageCover.jpg");
+  background-size:cover;
+  background-repeat:no-repeat;
+}
+
+/*Gansu card image*/
+.property-imageGa
+{
+  height:6em;
+  width:14em;
+  padding:1em 2em;
+  position:Absolute;
+  top:0px;
+  -webkit-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -o-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  background-image:url("../img/gansuPackageCover.jpg");
   background-size:cover;
   background-repeat:no-repeat;
 }
@@ -628,7 +644,13 @@ html {
   height:18em;
 }
 
+/*Beijing card on hover*/
 .property-card:hover .property-imageB
+{
+  height:18em;
+}
+/*Gansu card on hover*/
+.property-card:hover .property-imageGa
 {
   height:18em;
 }
