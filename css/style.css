@@ -550,6 +550,22 @@ html {
   background-size:cover;
   background-repeat:no-repeat;
 }
+
+/*Guizhou card image*/
+.property-imageGu
+{
+  height:6em;
+  width:14em;
+  padding:1em 2em;
+  position:Absolute;
+  top:0px;
+  -webkit-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -o-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  background-image:url("../img/guizhouPackageCover.jpg");
+  background-size:cover;
+  background-repeat:no-repeat;
+}
 /* Bottom Card Section */
 
 .property-description
@@ -655,6 +671,12 @@ html {
   height:18em;
 }
 
+/*Guizhou card on hover*/
+.property-card:hover .property-imageGu
+{
+  height:18em;
+}
+
 #contact-form{
   display: block;
   max-width: 600px;
@@ -737,7 +759,6 @@ html {
 .travelChinaContainer{
   display:none;
 }
-
 
 .animate{
   position: relative;
