@@ -337,14 +337,14 @@ p:last-child { margin-bottom: 0; }
 }
 /*Gansu Package Cover Image*/
 .tm-banner-bgGa {
-    background: url(../img/gansuPackageCover.jpg) center top no-repeat;    
+    background: url(../img/gansucover.jpg) center top no-repeat;    
     min-height: 720px;
     position: relative;
     background-size: cover;
 }
 
 /*Guizhou Package Cover Image*/
-.tm-banner-bgGa {
+.tm-banner-bgGui {
     background: url(../img/guizhouPackageCover.jpg) center top no-repeat;    
     min-height: 720px;
     position: relative;
