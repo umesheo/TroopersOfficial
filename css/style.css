@@ -164,6 +164,7 @@ html {
 .list-ol li{
   font-size:15px;
   font-weight:600;
+  margin-left:3px;
 }
 
 .sticky-sidebar:hover{
@@ -580,6 +581,22 @@ html {
   background-size:cover;
   background-repeat:no-repeat;
 }
+
+/*Qinghai card image*/
+.property-imageQi
+{
+  height:8em;
+  width:14em;
+  padding:1em 2em;
+  position:Absolute;
+  top:0px;
+  -webkit-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -o-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  background-image:url("../img/qinghaiXiningPackageCover.jpg");
+  background-size:cover;
+  background-repeat:no-repeat;
+}
 /* Bottom Card Section */
 
 .property-description
@@ -691,6 +708,12 @@ html {
   height:18em;
 }
 .property-card:hover .property-imageHe
+{
+  height:18em;
+}
+
+/*Qinghai card on hover*/
+.property-card:hover .property-imageQi
 {
   height:18em;
 }

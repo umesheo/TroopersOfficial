@@ -350,8 +350,18 @@ p:last-child { margin-bottom: 0; }
     position: relative;
     background-size: cover;
 }
+
 .tm-banner-bgHei {
     background: url(../img/HeilongjiangPacakageCover.jpg) center top no-repeat;    
+    min-height: 720px;
+    position: relative;
+    background-size: cover;
+}
+
+
+/*Qinghai Package Cover Image*/
+.tm-banner-bgQin {
+    background: url(../img/qinghaiXiningPackageCover.jpg) center top no-repeat;    
     min-height: 720px;
     position: relative;
     background-size: cover;
