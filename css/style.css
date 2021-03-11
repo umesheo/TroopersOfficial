@@ -597,6 +597,38 @@ html {
   background-size:cover;
   background-repeat:no-repeat;
 }
+
+/*Ningxia Hui card image*/
+.property-imageNi
+{
+  height:8em;
+  width:14em;
+  padding:1em 2em;
+  position:Absolute;
+  top:0px;
+  -webkit-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -o-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  background-image:url("../img/qinghaiXiningPackageCover.jpg");
+  background-size:cover;
+  background-repeat:no-repeat;
+}
+
+/*Shaanxi card image*/
+.property-imageSha
+{
+  height:8em;
+  width:14em;
+  padding:1em 2em;
+  position:Absolute;
+  top:0px;
+  -webkit-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -o-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  background-image:url("../img/shaanxiPackageCover.jpg");
+  background-size:cover;
+  background-repeat:no-repeat;
+}
 /* Bottom Card Section */
 
 .property-description
@@ -714,6 +746,19 @@ html {
 
 /*Qinghai card on hover*/
 .property-card:hover .property-imageQi
+{
+  height:18em;
+}
+
+
+/*Ningxia Hui card on hover*/
+.property-card:hover .property-imageNi
+{
+  height:18em;
+}
+
+/*Shaanxi card on hover*/
+.property-card:hover .property-imageSha
 {
   height:18em;
 }

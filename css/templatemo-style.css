@@ -367,6 +367,14 @@ p:last-child { margin-bottom: 0; }
     background-size: cover;
 }
 
+/*Shaanxi Package Cover Image*/
+.tm-banner-bgSha {
+    background: url(../img/shaanxiPackageCover.jpg) center top no-repeat;    
+    min-height: 720px;
+    position: relative;
+    background-size: cover;
+}
+
 
 .tm-banner-row { 
     position: relative;
