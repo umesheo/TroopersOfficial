@@ -629,6 +629,22 @@ html {
   background-size:cover;
   background-repeat:no-repeat;
 }
+.property-imageSi
+{
+  height:8em;
+  width:14em;
+  padding:1em 2em;
+  position:Absolute;
+  top:0px;
+  -webkit-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -o-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  background-image:url("../img/SinchauCover.jpg");
+  background-size:cover;
+  background-repeat:no-repeat;
+}
+/*Shinchau card imag*/
+
 /* Bottom Card Section */
 
 .property-description
@@ -756,7 +772,10 @@ html {
 {
   height:18em;
 }
-
+.property-card:hover .property-imageSi
+{
+  height:18em;
+}
 /*Shaanxi card on hover*/
 .property-card:hover .property-imageSha
 {

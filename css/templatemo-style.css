@@ -290,6 +290,12 @@ p:last-child { margin-bottom: 0; }
     position: relative;
 
 }
+.tm-banner-bgSi {
+    background: url(../img/SinchauCover.jpg) center top no-repeat;    
+    min-height: 720px;
+    position: relative;
+
+}
 
 
 .tm-banner-bgL {
