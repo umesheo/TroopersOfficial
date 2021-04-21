@@ -163,6 +163,7 @@
 </style>
 <script>
 function displayPackages(){
+
  /*$("#selectedCountryCategory").prop('selectedIndex',0)*/
     $('#selectedCountryCategory').on('change', function() {
 
@@ -273,7 +274,7 @@ $(window).load(function() {
                <!--
                 <form action="mailto:Subhaschettri0772@gmail.com" method="post" class="colorlib-form" enctype="text/plain">
                 -->
-                <form action="pagination1.html" class="colorlib-form">
+                <form action="Pagination1.html" class="colorlib-form">
                   <h2 class="customize-text">Customize your tour now</h2>
                         <div class="row justify-content-center">
                          <div class="col-md-4">
@@ -297,52 +298,42 @@ $(window).load(function() {
                                     />
                                     <label for="automobiles">Automobiles</label>
                                   </div>
-
                                   <div class="option">
                                     <input type="radio" class="radio" id="film" name="category" value="Film & Animation"/>
                                     <label for="film">Film & Animation</label>
                                   </div>
-
                                   <div class="option">
                                     <input type="radio" class="radio" id="science" name="category" />
                                     <label for="science">Science & Technology</label>
                                   </div>
-
                                   <div class="option">
                                     <input type="radio" class="radio" id="art" name="category" />
                                     <label for="art">Art</label>
                                   </div>
-
                                   <div class="option">
                                     <input type="radio" class="radio" id="music" name="category" />
                                     <label for="music">Music</label>
                                   </div>
-
                                   <div class="option">
                                     <input type="radio" class="radio" id="travel" name="category" />
                                     <label for="travel">Travel & Events</label>
                                   </div>
-
                                   <div class="option">
                                     <input type="radio" class="radio" id="sports" name="category" />
                                     <label for="sports">Sports</label>
                                   </div>
-
                                   <div class="option">
                                     <input type="radio" class="radio" id="news" name="category" />
                                     <label for="news">News & Politics</label>
                                   </div>
-
                                   <div class="option">
                                     <input type="radio" class="radio" id="tutorials" name="category" />
                                     <label for="tutorials">Tutorials</label>
                                   </div>
                                 </div>
-
                                 <div class="selected">
                                   Select Video Category
                                 </div>
-
                                 <div class="search-box">
                                   <input type="text" placeholder="Start Typing..." />
                                 </div>
@@ -385,7 +376,6 @@ $(window).load(function() {
                     <div class="container">
                         <div class="row tm-banner-row tm-banner-row-header">
                             <div class="col-xs-12">
-
                               -->
           <!--Select by country combo box-->
           <div class="page">
@@ -723,7 +713,7 @@ $(window).load(function() {
       <h5>Mansalu Region</h5>
       <p>Let's visit Mansalu Region. Why not create a magical moment with trek in Mansalu Region.</p>
     </div>
-    <a href="LangtangRegionPackages.html">
+    <a href="MansaluRegionPackages.html">
       
     </a>
   </div>
@@ -807,7 +797,7 @@ $(window).load(function() {
     </div>
   </div>
  </div>
-</div>
+
  <!--China package second row start-->
  <div class="site-sectionL bg-light second-container">
     <div class="site-section-container" style="padding-bottom:100px">
@@ -872,6 +862,7 @@ $(window).load(function() {
       </div>
     </div>
   </div>
+ </div>
  </div>
     <!--China Package End-->
    <section class="section customerReviewsSection" id="testimonials">
@@ -1301,12 +1292,10 @@ $(document).ready(function(){
         var people=document.getElementById("people").value;
         //Setting the value to local storage, can be accessed by peopleValue
         localStorage.setItem("peopleValue",people);
-
         //Getting the value from textfield and setting to dates variable 
         var dates=document.getElementById("dates").value;
         //Setting the value to local storage, can be accessed by datesValue
         localStorage.setItem("datesValue",dates);
-
         //Getting the value from textfield and setting to cost variable
         var cost=document.getElementById("cost").value;
         //Setting the value to local storage, can be accessed by datesValue

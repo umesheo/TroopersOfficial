@@ -443,7 +443,7 @@ html {
   -webkit-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
   -o-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
   transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
-  background-image:url("../img/mansaluRegionCover.jpg");
+  background-image:url("../img/MansaluRegionCover.jpg");
   background-size:cover;
   background-repeat:no-repeat;
 }
@@ -988,17 +988,15 @@ html {
   background-size: 100% 100%;
 }
 
-@media (max-width:400px) {
-  .containe,
+@media (max-width:540px) {
+  
   .book-content,
   .book,
-  {
-    width: 150px;
-    height: 200px;
-  }
+  .containe,
   .face-front, .face-back,
   .face-back{
-    width: 75%; /* The width is 100%, when the viewport is 800px or smaller */
+    
+    display: none; /* The width is 100%, when the viewport is 800px or smaller */
   }
 
 
@@ -3975,6 +3973,7 @@ header .logo
   .showcase,
   .showcase header
   {
+    
     padding: 40px;
   }
   .text h2

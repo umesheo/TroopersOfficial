@@ -313,7 +313,7 @@ p:last-child { margin-bottom: 0; }
 }
 
 .tm-banner-bgM {
-    background: url(../img/mansaluRegionCover.jpg) center top no-repeat;    
+    background: url(../img/MansaluRegionCover.jpg) center top no-repeat;    
     min-height: 720px;
     position: relative;
     background-size: cover;
@@ -867,10 +867,15 @@ footer p { color: white; }
 
   @media(max-width: 540px){
  .tm-top-bar{
-    max-width:375px;
+    max-width:100%;
   }
 }
+@media screen and (max-width: 540px){
+    .tm-top-bar .navbar-expand-lg .navbar-nav .nav-link{
+        width: 100%;
 
+    }
+}
 
 @media screen and (max-width: 991px) {
     .tm-top-bar .navbar-expand-lg .navbar-nav .nav-link {
