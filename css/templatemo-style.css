@@ -341,6 +341,13 @@ p:last-child { margin-bottom: 0; }
     position: relative;
     background-size: cover;
 }
+/*Bhutan Package Cover Image*/
+.tm-banner-bgBu {
+    background: url(../img/bhutanPackageCover.jpg) center top no-repeat;    
+    min-height: 720px;
+    position: relative;
+    background-size: cover;
+}
 /*Gansu Package Cover Image*/
 .tm-banner-bgGa {
     background: url(../img/gansucover.jpg) center top no-repeat;    

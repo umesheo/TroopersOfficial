@@ -518,6 +518,21 @@ html {
   background-size:cover;
   background-repeat:no-repeat;
 }
+/*Bhutan Package Card Image*/
+.property-imageBu
+{
+  height:6em;
+  width:14em;
+  padding:1em 2em;
+  position:Absolute;
+  top:0px;
+  -webkit-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -o-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  background-image:url("../img/bhutanPackageCover.jpg");
+  background-size:cover;
+  background-repeat:no-repeat;
+}
 /*China Package Card Images*/
 
 /*Beijing card image*/
@@ -778,6 +793,11 @@ html {
 }
 /*Shaanxi card on hover*/
 .property-card:hover .property-imageSha
+{
+  height:18em;
+}
+/*Bhutan card on hover*/
+.property-card:hover .property-imageBu
 {
   height:18em;
 }

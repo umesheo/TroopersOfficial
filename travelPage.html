@@ -173,6 +173,8 @@ function displayPackages(){
         $(".travelNepalContainer").show();
         //hide the China packages
         $(".travelChinaContainer").hide();
+         //hide the Bhutan packages
+        $(".travelBhutanContainer").hide();
       }
       else if ( this.value == 'Nepal')
       //.....................^.......
@@ -181,6 +183,8 @@ function displayPackages(){
         $(".travelNepalContainer").show();
         //hide the China packages
         $(".travelChinaContainer").hide();
+        //hide the Bhutan packages
+        $(".travelBhutanContainer").hide();
       }
       //else if the user selects China
       else if ( this.value == 'China')
@@ -189,6 +193,17 @@ function displayPackages(){
         $(".travelNepalContainer").hide();
         //display the China packages
         $(".travelChinaContainer").show();
+        //hide the Bhutan packages
+        $(".travelBhutanContainer").hide();
+      }
+       else if ( this.value == 'Bhutan')
+      {
+        //hide the Nepal packages
+        $(".travelNepalContainer").hide();
+        //display the China packages
+        $(".travelChinaContainer").hide();
+        //hide the Bhutan packages
+        $(".travelBhutanContainer").show();
       }
     });
 }
@@ -384,6 +399,7 @@ $(window).load(function() {
                 <option selected disabled value="None">Select a country (Default: Nepal)</option>
                 <option value="Nepal">Nepal</option>
                 <option value="China">China</option>
+                <option value="Bhutan">Bhutan</option>
               </select>
             </div>
           </div>   
@@ -465,6 +481,7 @@ $(window).load(function() {
     </div>
   </div>
   </div>
+
 
            <div class="containeT">
             <br><br><br><br>
@@ -865,6 +882,44 @@ $(window).load(function() {
  </div>
  </div>
     <!--China Package End-->
+    <!--Bhutan package starts-->
+     <div class="travelBhutanContainer">
+  <div class="site-sectionL bg-light">
+    <div class="site-section-container" style="padding-bottom:100px">
+  <div class="container">
+        <div class="row justify-content-center" >
+          <div class="col-lg-7 text-center mb-5">
+            <div class="heading" style="color: black;">
+            <h1>Popular Tour Destinations</h1>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-5">
+         <div class="property-card card_one">
+          <a href="BhutanPackage.html">
+            <div class="property-imageBu">
+              <div class="property-image-title">
+                <!-- Optional <h5>Card Title</h5> If you want it, turn on the CSS also. -->
+              </div>
+            </div></a>
+          <div class="property-description">
+            <h5> Bhutan </h5>
+            <p>Let's visit Bhutan. Why not create a magical moment with Bhutan visit. See more packages in Bhutan.</p>
+          </div>
+          <a href="BhutanPackage.html">
+          </a>
+        </div>
+         
+        
+         
+      </div>
+    </div>
+  </div>
+ </div>
+
+ <!--Bhutan package end-->
+
+ </div>
    <section class="section customerReviewsSection" id="testimonials">
         <div class="container">
             <!-- ***** Section Title Start ***** -->
